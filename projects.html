@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | First Last</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div class="projects-section">
+    <h2>Projects</h2>
+    <ul class="projects-list">
+      <li>
+        <strong>Project Title 1</strong><br>
+        <span>Short description of your project, technologies used, and your role.</span>
+      </li>
+      <li>
+        <strong>Project Title 2</strong><br>
+        <span>Short description of your project, technologies used, and your role.</span>
+      </li>
+    </ul>
+  </div>
+  <script>
+    fetch('components/navbar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar-container').innerHTML = html;
+      });
+  </script>
+</body>
+</html> 

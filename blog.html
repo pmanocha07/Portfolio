@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | First Last</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div id="navbar-container"></div>
+  <div class="blog-section">
+    <h2>Blog</h2>
+    <ul class="blog-list">
+      <li>
+        <strong>Blog Post Title 1</strong><br>
+        <span>Short summary or excerpt from your blog post.</span>
+      </li>
+      <li>
+        <strong>Blog Post Title 2</strong><br>
+        <span>Short summary or excerpt from your blog post.</span>
+      </li>
+    </ul>
+  </div>
+  <script>
+    fetch('components/navbar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar-container').innerHTML = html;
+      });
+  </script>
+</body>
+</html> 

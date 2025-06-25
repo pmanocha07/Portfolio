@@ -3,138 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Your Name] | Portfolio</title>
+    <title>First Last | Professional Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', Arial, sans-serif; }
+        .section-title { display: flex; align-items: center; gap: 0.7rem; font-size: 1.7rem; font-weight: 700; letter-spacing: 1px; }
+        .section-title i { color: var(--primary); font-size: 1.4em; }
+        .about-text { font-size: 1.18rem; color: var(--secondary); margin: 1.2rem 0 0.7rem 0; }
+        /* HERO BACKGROUND */
+        .hero-bg {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 0 0 32px 32px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 32px rgba(35,41,70,0.10);
+        }
+        .hero-bg img.bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
+            filter: blur(8px) brightness(0.7) saturate(1.2);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            padding: 3rem 1.5rem 2rem 1.5rem;
+            background: rgba(35,41,70,0.45);
+            border-radius: 24px;
+            box-shadow: 0 2px 16px rgba(35,41,70,0.13);
+            max-width: 540px;
+            margin: 2rem auto;
+        }
+        .hero-content .name {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 12px rgba(35,41,70,0.18);
+        }
+        .hero-content .contact-info {
+            font-size: 1.2rem;
+            color: #FEC260;
+            margin-bottom: 0.7rem;
+            font-weight: 500;
+        }
+        .hero-content .nav-social {
+            margin-top: 1.2rem;
+        }
+        .hero-content .nav-social a {
+            color: #fff;
+            background: rgba(79,140,255,0.13);
+            border-radius: 50%;
+            margin: 0 0.3rem;
+            font-size: 1.5rem;
+            width: 44px; height: 44px; line-height: 44px; display: inline-block;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+        }
+        .hero-content .nav-social a:hover {
+            background: #4F8CFF;
+            color: #fff;
+            transform: scale(1.13);
+        }
+        /* CONTACT SECTION */
+        #contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            background: linear-gradient(120deg, #F4F6FB 60%, #4F8CFF11 100%);
+            border-radius: 32px;
+            box-shadow: 0 2px 16px rgba(35,41,70,0.10);
+            margin-bottom: 2rem;
+        }
+        .contact-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 2px 16px rgba(35,41,70,0.10);
+            padding: 2.5rem 2rem 2rem 2rem;
+            max-width: 420px;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        .contact-card h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        .contact-card p {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1.5px solid var(--gray);
+            font-size: 1rem;
+            background: #F4F6FB;
+            transition: border 0.2s;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            border: 1.5px solid var(--primary);
+            outline: none;
+        }
+        .contact-form button {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.7rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 1px 4px rgba(30,40,60,0.07);
+            margin-top: 0.5rem;
+        }
+        .contact-form button:hover {
+            background: var(--accent);
+            color: var(--secondary);
+        }
+        .contact-social {
+            margin-top: 1.2rem;
+        }
+        .contact-social a {
+            color: var(--secondary);
+            background: #F4F6FB;
+            border-radius: 50%;
+            margin: 0 0.3rem;
+            font-size: 1.3rem;
+            width: 38px; height: 38px; line-height: 38px; display: inline-block;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+        }
+        .contact-social a:hover {
+            background: #4F8CFF;
+            color: #fff;
+            transform: scale(1.13);
+        }
+        @media (max-width: 700px) {
+            .hero-content { max-width: 98vw; }
+            .contact-card { padding: 1.2rem 0.5rem; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>[Your Name]</h1>
-            <ul>
-                <li><a href="#who-i-am">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="main-nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <span class="nav-social">
+            <a href="https://github.com/pmanocha07" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/pavnimanocha" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com/pmanocha_07" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/pmanocha_07" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        </span>
+    </nav>
 
-    <main>
-        <section id="who-i-am">
-            <article>
-                <figure>
-                    <!-- Add your image source later -->
-                    <img src="[profile-image.jpg]" alt="Your Name">
-                    <figcaption>[Your Name]</figcaption>
-                </figure>
-                <h2>About Me</h2>
-                <p>[Brief introduction]</p>
-                <aside>
-                    <h3>Quick Facts</h3>
-                    <ul>
-                        <li>📍 [Your Location]</li>
-                        <li>📧 [Your Email]</li>
-                        <li>📱 [Your Phone]</li>
-                    </ul>
-                </aside>
-            </article>
-        </section>
-
-        <section id="education-certifications">
-            <article>
-                <h2>Education</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>[Degree]</h3>
-                        <p>[University Name]</p>
-                        <time>[Start Date] - [End Date]</time>
-                    </div>
-                    <!-- Add more timeline items -->
-                </div>
-            </article>
-
-            <aside>
-                <h3>Certifications</h3>
-                <ul>
-                    <li>
-                        <h4>[Certification Name]</h4>
-                        <p>[Issuing Organization]</p>
-                        <time>[Date Earned]</time>
-                    </li>
-                    <!-- Add more certifications -->
-                </ul>
-            </aside>
-        </section>
-
-        <section id="experience">
-            <h2>Professional Journey</h2>
-            <article>
-                <h3>[Job Title]</h3>
-                <p>[Company Name]</p>
-                <time>[Start Date] - [End Date]</time>
-                <ul>
-                    <li>[Key Achievement 1]</li>
-                    <li>[Key Achievement 2]</li>
-                </ul>
-            </article>
-            <!-- Add more experience articles -->
-        </section>
-
-        <section id="projects">
-            <h2>Featured Projects</h2>
-            <div class="project-grid">
-                <article>
-                    <h3>[Project Title]</h3>
-                    <p>[Short Description]</p>
-                    <ul>
-                        <li>Technology: [Tech Stack]</li>
-                        <li>Role: [Your Role]</li>
-                    </ul>
-                </article>
-                <!-- Add more project articles -->
+    <!-- Hero Section with Background -->
+    <div class="hero-bg" id="hero">
+        <img src="assets/profile.jpg" alt="Profile Background" class="bg">
+        <div class="hero-content">
+            <div class="name">First Last</div>
+            <div class="contact-info">Financial Data Analyst & Product Manager</div>
+            <div class="contact-info">San Francisco, CA | first.last@resumeworded.com</div>
+            <div class="nav-social">
+                <a href="https://github.com/pmanocha07" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/pavnimanocha" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com/pmanocha_07" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/pmanocha_07" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
             </div>
-        </section>
-
-        <section id="achievements-clubs">
-            <article>
-                <h2>Honors & Awards</h2>
-                <ul>
-                    <li>
-                        <h3>[Achievement Title]</h3>
-                        <p>[Organization]</p>
-                        <time>[Date Received]</time>
-                    </li>
-                    <!-- Add more achievements -->
-                </ul>
-            </article>
-
-            <aside>
-                <h3>Club Memberships</h3>
-                <ul>
-                    <li>
-                        <h4>[Club Name]</h4>
-                        <p>[Your Role]</p>
-                        <time>[Duration]</time>
-                    </li>
-                    <!-- Add more clubs -->
-                </ul>
-            </aside>
-        </section>
-    </main>
-
-    <footer id="contact">
-        <h2>Let's Connect</h2>
-        <address>
-            📍 [Your Location]<br>
-            📧 <a href="mailto:[your@email.com]">[your@email.com]</a><br>
-            📱 [Your Phone Number]
-        </address>
-
-        <div class="social-links">
-            <!-- Add your social media links later -->
-            <a href="[LinkedIn URL]">LinkedIn</a>
-            <a href="[GitHub URL]">GitHub</a>
-            <a href="[Twitter URL]">Twitter</a>
         </div>
-    </footer>
+    </div>
+
+    <!-- About Section -->
+    <div class="section" id="about">
+        <div class="section-title"><i class="fas fa-user"></i> About</div>
+        <div class="about-text">
+            Experienced Financial Data Analyst and Product Manager with a passion for business growth, operational efficiency, and data-driven strategy. Adept at leading cross-functional teams, launching new initiatives, and delivering measurable results.
+        </div>
+    </div>
+
+    <!-- Experience Section -->
+    <div class="section" id="experience">
+        <div class="section-title"><i class="fas fa-briefcase"></i> Experience</div>
+        <div class="projects-list">
+            <div class="projects-list li">
+                <strong>Resume Worded & Co.</strong> <span style="color:var(--gray);">| Financial Data Analyst | Oct 2017 – Present | San Francisco, CA</span>
+                <ul>
+                    <li>Led cross-functional team of 10 in 3 locations; launched Miami office, grew revenue by 200% in 9 months.</li>
+                    <li>Designed training and mentoring programs for new analysts; reduced onboarding time by 50%.</li>
+                    <li>Achieved $200K reduction in department overspend by establishing ROI metrics and budget controls.</li>
+                </ul>
+            </div>
+            <div class="projects-list li">
+                <strong>Instamake</strong> <span style="color:var(--gray);">| Associate Product Manager | Jun 2015 – Oct 2017 | San Francisco, CA</span>
+                <ul>
+                    <li>Spearheaded a major pricing restructure, increasing average sale 35% and margin 12%.</li>
+                    <li>Promoted within 12 months due to strong performance and organizational impact.</li>
+                    <li>Identified steps to reduce return rates by 10%, saving $75k in costs.</li>
+                </ul>
+            </div>
+            <div class="projects-list li">
+                <strong>Resume Worded & Co.</strong> <span style="color:var(--gray);">| Associate Product Manager | Jun 2011 – May 2013 | Austin, TX</span>
+                <ul>
+                    <li>Analyzed data from 25,000 monthly users to guide marketing and product strategies.</li>
+                    <li>Drove redevelopment of internal tracking system, resulting in 20+ new features and 15% operation time reduction.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="section" id="projects">
+        <div class="section-title"><i class="fas fa-folder-open"></i> Projects</div>
+        <ul class="projects-list">
+            <li>
+                <strong>Project Title 1</strong><br>
+                <span>Short description of your project, technologies used, and your role.</span>
+            </li>
+            <li>
+                <strong>Project Title 2</strong><br>
+                <span>Short description of your project, technologies used, and your role.</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="section" id="skills">
+        <div class="section-title"><i class="fas fa-tools"></i> Skills</div>
+        <div class="skills-badges">
+            <span class="skill-badge">R</span>
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">SQL</span>
+            <span class="skill-badge">Tableau</span>
+            <span class="skill-badge">Financial Modeling</span>
+            <span class="skill-badge">Scrum</span>
+            <span class="skill-badge">Spanish</span>
+            <span class="skill-badge">Chinese</span>
+        </div>
+    </div>
+
+    <!-- Education Section -->
+    <div class="section" id="education">
+        <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+        <ul>
+            <li><strong>Resume Worded Business School</strong> – MBA, Business Analytics (2015)</li>
+            <li><strong>Resume Worded University</strong> – MBA, Business Analytics (2011)</li>
+        </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section" id="contact">
+        <div class="contact-card">
+            <h2>Contact Me</h2>
+            <p>Let's connect! Fill out the form below or reach out via social links.</p>
+            <form class="contact-form" action="mailto:first.last@resumeworded.com" method="POST" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div class="contact-social">
+                <a href="https://github.com/pmanocha07" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/pavnimanocha" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com/pmanocha_07" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/pmanocha_07" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
