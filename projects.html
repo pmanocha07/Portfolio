@@ -3,31 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects | First Last</title>
+  <title>Projects | Pavni Manocha</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    .proj-detail-section {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      background: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(30,40,60,0.08);
+      padding: 2.5rem 2rem;
+    }
+    .proj-detail-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .proj-detail-meta {
+      color: #888;
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+    }
+    .proj-detail-images {
+      display: flex;
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .proj-detail-images img {
+      width: 220px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(35,41,70,0.10);
+    }
+  </style>
 </head>
 <body>
-  <div id="navbar-container"></div>
-  <div class="projects-section">
-    <h2>Projects</h2>
-    <ul class="projects-list">
-      <li>
-        <strong>Project Title 1</strong><br>
-        <span>Short description of your project, technologies used, and your role.</span>
-      </li>
-      <li>
-        <strong>Project Title 2</strong><br>
-        <span>Short description of your project, technologies used, and your role.</span>
-      </li>
+  <nav class="main-nav">
+    <a href="index.html#hero">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <section id="diabesure" class="proj-detail-section">
+    <div class="proj-detail-title">DiabeSure: Diabetes Prediction Model</div>
+    <div class="proj-detail-meta">May 2025 &mdash; Python, Scikit-learn, Pandas</div>
+    <div class="proj-detail-images">
+      <img src="assets/sample-diabesure.jpg" alt="DiabeSure Screenshot" />
+    </div>
+    <ul>
+      <li>Devised a machine learning model to predict diabetes risk using health metrics.</li>
+      <li>Enhanced data preprocessing with imputation and normalization, boosting model accuracy by 10%.</li>
+      <li>Optimized feature selection, leading to improved robustness and overall performance.</li>
     </ul>
-  </div>
-  <script>
-    fetch('components/navbar.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('navbar-container').innerHTML = html;
-      });
-  </script>
+  </section>
+
+  <section id="bonded" class="proj-detail-section">
+    <div class="proj-detail-title">bondEd: EdTech Platform</div>
+    <div class="proj-detail-meta">Feb 2025 &mdash; HTML, CSS, JavaScript</div>
+    <div class="proj-detail-images">
+      <img src="assets/sample-bonded.jpg" alt="bondEd Screenshot" />
+    </div>
+    <ul>
+      <li>Built a comprehensive platform connecting alumni and students within technical education departments.</li>
+      <li>Integrated features including searchable directories, mentorship pairing, internship postings, forums, and event scheduling.</li>
+    </ul>
+  </section>
+
+  <section id="dineswift" class="proj-detail-section">
+    <div class="proj-detail-title">DineSwift: Remote & Onsite Food Ordering Website</div>
+    <div class="proj-detail-meta">Nov 2024 &mdash; HTML, CSS, JavaScript</div>
+    <div class="proj-detail-images">
+      <img src="assets/sample-dineswift.jpg" alt="DineSwift Screenshot" />
+    </div>
+    <ul>
+      <li>Engineered a real-time order tracking system with token authentication, cutting wait times by 25% and improving throughput to 10 orders/hour.</li>
+      <li>Implemented role-based design for customers, kitchen staff, and administrators, enhancing user experience and operational efficiency.</li>
+    </ul>
+  </section>
+
+  <section id="tunenest" class="proj-detail-section">
+    <div class="proj-detail-title">TuneNest: Music Recommendation Platform</div>
+    <div class="proj-detail-meta">Apr 2025 &mdash; Python, Flask, scikit-learn</div>
+    <div class="proj-detail-images">
+      <img src="assets/sample-tunenest.jpg" alt="TuneNest Screenshot" />
+    </div>
+    <ul>
+      <li>Developed a personalized music recommendation system using collaborative filtering and audio feature analysis.</li>
+      <li>Built a web interface with Flask for users to explore, rate, and receive tailored song suggestions.</li>
+      <li>Integrated scikit-learn for model training and evaluation, improving recommendation accuracy and user engagement.</li>
+    </ul>
+  </section>
 </body>
 </html> 
