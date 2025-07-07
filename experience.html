@@ -3,9 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Experience | First Last</title>
+  <title>Experience | Pavni Manocha</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    .exp-detail-section {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      background: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(30,40,60,0.08);
+      padding: 2.5rem 2rem;
+    }
+    .exp-detail-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .exp-detail-meta {
+      color: #888;
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+    }
+    .exp-detail-images {
+      display: flex;
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .exp-detail-images img {
+      width: 220px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(35,41,70,0.10);
+    }
+  </style>
 </head>
 <body>
   <div id="navbar-container"></div>
@@ -35,6 +69,33 @@
       <li>Drove redevelopment of internal tracking system, resulting in 20+ new features and 15% operation time reduction.</li>
     </ul>
   </div>
+  <section id="iitr" class="exp-detail-section">
+    <div class="exp-detail-title">Research Intern, IIT Roorkee</div>
+    <div class="exp-detail-meta">Indian Institute of Technology Roorkee &mdash; Jun 2025 – Aug 2025 | Roorkee, Uttarakhand</div>
+    <div class="exp-detail-images">
+      <img src="assets/sample-team1.jpg" alt="Team at IIT Roorkee" />
+      <img src="assets/sample-work1.jpg" alt="Work Culture at IIT Roorkee" />
+    </div>
+    <ul>
+      <li>Contributed to a Raspberry Pi–based traffic violation detection system, helping boost detection accuracy by 30% and monitoring efficiency.</li>
+      <li>Developed real-time backend syncing mechanisms to ensure higher data fidelity and operational consistency.</li>
+      <li>Integrated Python-based multi-level logging with robust exception handling for seamless debugging and traceability.</li>
+      <li>Analyzed traffic footage on the Indian Traffic Dataset, attaining 0.91 mAP@50 in performance benchmarks.</li>
+      <li>Architected fault-tolerant passenger counting pipelines using CSV logging, Firebase triggers, and YAML-configured error codes.</li>
+    </ul>
+  </section>
+  <section id="aapke-saath" class="exp-detail-section">
+    <div class="exp-detail-title">Intern, Aapke Saath Foundation</div>
+    <div class="exp-detail-meta">Aapke Saath Foundation &mdash; Mar 2025 – May 2025 | Bareilly, Uttar Pradesh</div>
+    <div class="exp-detail-images">
+      <img src="assets/sample-team2.jpg" alt="Team at Aapke Saath Foundation" />
+      <img src="assets/sample-work2.jpg" alt="Work Culture at Aapke Saath Foundation" />
+    </div>
+    <ul>
+      <li>Revamped 80% of the NGO's website front end using HTML, CSS & JavaScript, improving load time and mobile responsiveness.</li>
+      <li>Collaborated with 5+ stakeholders to restructure key user flows, enhancing volunteer sign-up conversions by 25%.</li>
+    </ul>
+  </section>
   <script>
     fetch('components/navbar.html')
       .then(res => res.text())

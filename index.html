@@ -10,27 +10,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+        :root {
+            --primary: #232946;
+            --accent: #FEC260;
+            --background: #F4F6FB;
+            --card-bg: #fff;
+            --text: #232946;
+            --gray: #B8C1EC;
+        }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Montserrat', Arial, sans-serif; }
+        body { font-family: 'Montserrat', Arial, sans-serif; background: var(--background); color: var(--text); }
         .section-title { display: flex; align-items: center; gap: 0.7rem; font-size: 1.7rem; font-weight: 700; letter-spacing: 1px; }
         .section-title i { color: var(--primary); font-size: 1.4em; }
         .about-text { font-size: 1.18rem; color: var(--secondary); margin: 1.2rem 0 0.7rem 0; }
         /* HERO BACKGROUND */
         .hero-bg {
             position: relative;
-            min-height: 60vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-            border-radius: 0 0 32px 32px;
-            margin-bottom: 2.5rem;
+            background-image: linear-gradient(120deg,rgba(35,41,70,0.65) 0%,rgba(35,41,70,0.25) 100%), url('assets/profile.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             box-shadow: 0 4px 32px rgba(35,41,70,0.10);
+            border-radius: 0 0 32px 32px;
+            overflow: hidden;
         }
-        .hero-bg img.bg {
+        .hero-overlay {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;
-            filter: blur(8px) brightness(0.7) saturate(1.2);
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(120deg,rgba(35,41,70,0.65) 0%,rgba(35,41,70,0.25) 100%);
             z-index: 1;
         }
         .hero-content {
@@ -38,42 +49,52 @@
             z-index: 2;
             text-align: center;
             color: #fff;
-            padding: 3rem 1.5rem 2rem 1.5rem;
-            background: rgba(35,41,70,0.45);
-            border-radius: 24px;
-            box-shadow: 0 2px 16px rgba(35,41,70,0.13);
-            max-width: 540px;
-            margin: 2rem auto;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        .hero-content .name {
-            font-size: 2.8rem;
-            font-weight: 800;
+        .hero-name {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
             letter-spacing: 2px;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.7rem;
             text-shadow: 0 2px 12px rgba(35,41,70,0.18);
         }
-        .hero-content .contact-info {
-            font-size: 1.2rem;
+        .hero-title {
+            font-size: 1.5rem;
+            font-weight: 600;
             color: #FEC260;
-            margin-bottom: 0.7rem;
-            font-weight: 500;
+            margin-bottom: 0.5rem;
         }
-        .hero-content .nav-social {
+        .hero-location {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            margin-bottom: 1.2rem;
+        }
+        .hero-contact {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            margin-bottom: 1.2rem;
+        }
+        .hero-socials {
+            display: flex;
+            gap: 1.2rem;
             margin-top: 1.2rem;
         }
-        .hero-content .nav-social a {
+        .hero-socials a {
             color: #fff;
-            background: rgba(79,140,255,0.13);
-            border-radius: 50%;
-            margin: 0 0.3rem;
-            font-size: 1.5rem;
-            width: 44px; height: 44px; line-height: 44px; display: inline-block;
-            transition: background 0.2s, color 0.2s, transform 0.2s;
+            font-size: 2rem;
+            transition: color 0.2s, transform 0.2s;
         }
-        .hero-content .nav-social a:hover {
-            background: #4F8CFF;
-            color: #fff;
-            transform: scale(1.13);
+        .hero-socials a:hover {
+            color: #4F8CFF;
+            transform: scale(1.15);
         }
         /* CONTACT SECTION */
         #contact {
@@ -88,7 +109,7 @@
             margin-bottom: 2rem;
         }
         .contact-card {
-            background: #fff;
+            background: var(--card-bg);
             border-radius: 18px;
             box-shadow: 0 2px 16px rgba(35,41,70,0.10);
             padding: 2.5rem 2rem 2rem 2rem;
@@ -101,7 +122,7 @@
         .contact-card h2 {
             font-size: 2rem;
             font-weight: 800;
-            color: var(--secondary);
+            color: var(--primary);
             margin-bottom: 0.5rem;
         }
         .contact-card p {
@@ -120,16 +141,16 @@
             border-radius: 8px;
             border: 1.5px solid var(--gray);
             font-size: 1rem;
-            background: #F4F6FB;
+            background: var(--background);
             transition: border 0.2s;
         }
         .contact-form input:focus, .contact-form textarea:focus {
-            border: 1.5px solid var(--primary);
+            border: 1.5px solid var(--accent);
             outline: none;
         }
         .contact-form button {
-            background: var(--primary);
-            color: #fff;
+            background: var(--accent);
+            color: var(--primary);
             border: none;
             border-radius: 8px;
             padding: 0.7rem 1.5rem;
@@ -141,15 +162,15 @@
             margin-top: 0.5rem;
         }
         .contact-form button:hover {
-            background: var(--accent);
-            color: var(--secondary);
+            background: var(--primary);
+            color: #fff;
         }
         .contact-social {
             margin-top: 1.2rem;
         }
         .contact-social a {
-            color: var(--secondary);
-            background: #F4F6FB;
+            color: var(--primary);
+            background: var(--background);
             border-radius: 50%;
             margin: 0 0.3rem;
             font-size: 1.3rem;
@@ -157,13 +178,129 @@
             transition: background 0.2s, color 0.2s, transform 0.2s;
         }
         .contact-social a:hover {
-            background: #4F8CFF;
+            background: var(--accent);
             color: #fff;
             transform: scale(1.13);
         }
         @media (max-width: 700px) {
-            .hero-content { max-width: 98vw; }
+            .hero-bg { min-height: 60vh; }
+            .hero-name { font-size: 2rem; }
+            .hero-title { font-size: 1.1rem; }
             .contact-card { padding: 1.2rem 0.5rem; }
+        }
+        .section {
+            max-width: 1100px;
+            margin: 3rem auto;
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 2px 16px rgba(35,41,70,0.10);
+            padding: 2.5rem 2rem;
+        }
+        .section-heading {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        .about-card {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .about-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--card-bg);
+            box-shadow: 0 2px 12px rgba(35,41,70,0.18);
+        }
+        .exp-card, .project-card, .edu-card {
+            background: var(--background);
+            border-radius: 18px;
+            box-shadow: 0 1px 8px rgba(35,41,70,0.07);
+            padding: 2rem 1.5rem;
+            transition: box-shadow 0.2s, transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+        .exp-card:hover, .project-card:hover, .edu-card:hover {
+            box-shadow: 0 4px 24px rgba(79,140,255,0.13);
+            transform: translateY(-4px) scale(1.02);
+        }
+        .exp-role, .edu-degree {
+            font-weight: 600;
+            color: var(--accent);
+        }
+        .exp-date, .edu-date {
+            font-size: 0.95rem;
+            color: #888;
+        }
+        .skills-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 1.2rem;
+        }
+        .skill-badge {
+            background: var(--gray);
+            color: var(--primary);
+            border-radius: 20px;
+            padding: 0.4rem 1.1rem;
+            font-size: 1rem;
+            font-weight: 500;
+            box-shadow: 0 1px 4px rgba(30,40,60,0.07);
+            transition: background 0.2s, color 0.2s;
+        }
+        .skill-badge:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1.1s cubic-bezier(.23,1.01,.32,1) 0.1s both;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 900px) {
+            .section { padding: 1.2rem 0.7rem; }
+            .about-card { flex-direction: column; gap: 1.2rem; }
+        }
+        @media (max-width: 700px) {
+            .section { padding: 0.7rem 0.2rem; }
+            .card-grid { grid-template-columns: 1fr; }
+            .about-photo { width: 80px; height: 80px; }
+        }
+        .responsive-contact {
+            max-width: 420px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 2rem 2rem;
+            box-sizing: border-box;
+        }
+        @media (max-width: 600px) {
+            .responsive-contact {
+                padding: 1.2rem 0.5rem;
+                min-width: 0;
+                max-width: 98vw;
+            }
+            .contact-form input, .contact-form textarea {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -183,117 +320,200 @@
         </span>
     </nav>
 
-    <!-- Hero Section with Background -->
+    <!-- Hero Section styled like shaq-portfolio.netlify.app -->
     <div class="hero-bg" id="hero">
-        <img src="assets/profile.jpg" alt="Profile Background" class="bg">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="name">First Last</div>
-            <div class="contact-info">Financial Data Analyst & Product Manager</div>
-            <div class="contact-info">San Francisco, CA | first.last@resumeworded.com</div>
-            <div class="nav-social">
+            <h1 class="hero-name">Pavni Manocha</h1>
+            <div class="hero-title">Software Engineer and Data Analyst</div>
+            <div class="hero-location">Bhimtal, India</div>
+            <div class="hero-contact">📞 +91 8532018298 &nbsp; | &nbsp; <a href="mailto:pmanocha553@gmail.com" style="color:#FEC260;">pmanocha553@gmail.com</a></div>
+            <div class="hero-socials" style="margin-top:1.2rem;">
                 <a href="https://github.com/pmanocha07" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/pavnimanocha" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://instagram.com/pmanocha_07" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://twitter.com/pmanocha_07" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com/in/pavnichoudhary" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </div>
 
     <!-- About Section -->
-    <div class="section" id="about">
-        <div class="section-title"><i class="fas fa-user"></i> About</div>
-        <div class="about-text">
-            Experienced Financial Data Analyst and Product Manager with a passion for business growth, operational efficiency, and data-driven strategy. Adept at leading cross-functional teams, launching new initiatives, and delivering measurable results.
+    <section id="about" class="section about-section fade-in slide-in-left">
+        <div class="about-card" style="display: flex; align-items: center; gap: 2.5rem;">
+            <img src="assets/circle.jpg" alt="Profile Photo" class="about-photo" style="flex-shrink: 0; width: 140px; height: 140px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 12px rgba(79,140,255,0.10);">
+            <div style="flex: 1;">
+                <h2 class="section-heading">About</h2>
+                <p class="about-text">Hi, I'm Pavni Manocha, a driven Computer Science student specializing in AI and ML. I love turning data into insights and ideas into real-world solutions. My goal is to use technology to make a positive impact, whether through innovative projects or collaborative teamwork.</p>
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- Experience Section -->
-    <div class="section" id="experience">
-        <div class="section-title"><i class="fas fa-briefcase"></i> Experience</div>
-        <div class="projects-list">
-            <div class="projects-list li">
-                <strong>Resume Worded & Co.</strong> <span style="color:var(--gray);">| Financial Data Analyst | Oct 2017 – Present | San Francisco, CA</span>
-                <ul>
-                    <li>Led cross-functional team of 10 in 3 locations; launched Miami office, grew revenue by 200% in 9 months.</li>
-                    <li>Designed training and mentoring programs for new analysts; reduced onboarding time by 50%.</li>
-                    <li>Achieved $200K reduction in department overspend by establishing ROI metrics and budget controls.</li>
-                </ul>
+    <section id="experience" class="section fade-in slide-in-right">
+        <h2 class="section-heading"><i class="fas fa-briefcase"></i> Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <a href="experience.html#iitr" class="timeline-link">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-title">Research Intern, IIT Roorkee</span>
+                        <span class="timeline-date">Jun 2025 – Aug 2025</span>
+                        <span class="timeline-location">Roorkee, Uttarakhand</span>
+                    </div>
+                </a>
             </div>
-            <div class="projects-list li">
-                <strong>Instamake</strong> <span style="color:var(--gray);">| Associate Product Manager | Jun 2015 – Oct 2017 | San Francisco, CA</span>
-                <ul>
-                    <li>Spearheaded a major pricing restructure, increasing average sale 35% and margin 12%.</li>
-                    <li>Promoted within 12 months due to strong performance and organizational impact.</li>
-                    <li>Identified steps to reduce return rates by 10%, saving $75k in costs.</li>
-                </ul>
-            </div>
-            <div class="projects-list li">
-                <strong>Resume Worded & Co.</strong> <span style="color:var(--gray);">| Associate Product Manager | Jun 2011 – May 2013 | Austin, TX</span>
-                <ul>
-                    <li>Analyzed data from 25,000 monthly users to guide marketing and product strategies.</li>
-                    <li>Drove redevelopment of internal tracking system, resulting in 20+ new features and 15% operation time reduction.</li>
-                </ul>
+            <div class="timeline-item">
+                <a href="experience.html#aapke-saath" class="timeline-link">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-title">Intern, Aapke Saath Foundation</span>
+                        <span class="timeline-date">Mar 2025 – May 2025</span>
+                        <span class="timeline-location">Bareilly, Uttar Pradesh</span>
+                    </div>
+                </a>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Projects Section -->
-    <div class="section" id="projects">
-        <div class="section-title"><i class="fas fa-folder-open"></i> Projects</div>
-        <ul class="projects-list">
-            <li>
-                <strong>Project Title 1</strong><br>
-                <span>Short description of your project, technologies used, and your role.</span>
-            </li>
-            <li>
-                <strong>Project Title 2</strong><br>
-                <span>Short description of your project, technologies used, and your role.</span>
-            </li>
-        </ul>
-    </div>
+    <section id="projects" class="section fade-in slide-in-left">
+        <h2 class="section-heading"><i class="fas fa-folder-open"></i> Projects</h2>
+        <div class="project-showcase">
+            <a class="project-card-showcase" href="projects.html#diabesure">
+                <img src="assets/sample-diabesure.jpg" alt="DiabeSure" />
+                <div class="project-card-title">DiabeSure</div>
+                <div class="project-card-tagline">Diabetes Prediction Model</div>
+            </a>
+            <a class="project-card-showcase" href="projects.html#bonded">
+                <img src="assets/sample-bonded.jpg" alt="bondEd" />
+                <div class="project-card-title">bondEd</div>
+                <div class="project-card-tagline">EdTech Platform</div>
+            </a>
+            <a class="project-card-showcase" href="projects.html#dineswift">
+                <img src="assets/sample-dineswift.jpg" alt="DineSwift" />
+                <div class="project-card-title">DineSwift</div>
+                <div class="project-card-tagline">Remote & Onsite Food Ordering</div>
+            </a>
+            <a class="project-card-showcase" href="projects.html#tunenest">
+                <img src="assets/sample-tunenest.jpg" alt="TuneNest" />
+                <div class="project-card-title">TuneNest</div>
+                <div class="project-card-tagline">Music Recommendation Platform</div>
+            </a>
+        </div>
+    </section>
 
     <!-- Skills Section -->
-    <div class="section" id="skills">
-        <div class="section-title"><i class="fas fa-tools"></i> Skills</div>
-        <div class="skills-badges">
-            <span class="skill-badge">R</span>
-            <span class="skill-badge">Python</span>
-            <span class="skill-badge">SQL</span>
-            <span class="skill-badge">Tableau</span>
-            <span class="skill-badge">Financial Modeling</span>
-            <span class="skill-badge">Scrum</span>
-            <span class="skill-badge">Spanish</span>
-            <span class="skill-badge">Chinese</span>
-        </div>
-    </div>
-
-    <!-- Education Section -->
-    <div class="section" id="education">
-        <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
-        <ul>
-            <li><strong>Resume Worded Business School</strong> – MBA, Business Analytics (2015)</li>
-            <li><strong>Resume Worded University</strong> – MBA, Business Analytics (2011)</li>
-        </ul>
-    </div>
-
-    <!-- Contact Section -->
-    <div class="section" id="contact">
-        <div class="contact-card">
-            <h2>Contact Me</h2>
-            <p>Let's connect! Fill out the form below or reach out via social links.</p>
-            <form class="contact-form" action="mailto:first.last@resumeworded.com" method="POST" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            <div class="contact-social">
-                <a href="https://github.com/pmanocha07" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/pavnimanocha" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://instagram.com/pmanocha_07" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://twitter.com/pmanocha_07" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+    <section id="skills" class="section fade-in slide-in-right">
+        <h2 class="section-heading"><i class="fas fa-tools"></i> Technical Skills</h2>
+        <div class="skills-category">
+            <h3>Languages</h3>
+            <!-- change the width to change the progress bar-->
+            <div class="skills-list">
+                <div class="skill-item"><i class="fab fa-python"></i> Python <div class="skill-bar"><div class="skill-bar-fill" style="width: 50%"></div></div></div>
+                <div class="skill-item"><i class="fab fa-java"></i> Java <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%"></div></div></div>
+                <div class="skill-item"><i class="fab fa-js-square"></i> JavaScript <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%"></div></div></div>
+                <div class="skill-item"><i class="fas fa-code"></i> C/C++ <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%"></div></div></div>
+                <div class="skill-item"><i class="fab fa-r-project"></i> R <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%"></div></div></div>
             </div>
         </div>
-    </div>
+        <div class="skills-category">
+            <h3>Frameworks & Libraries</h3>
+            <div class="skills-list">
+                <div class="skill-item"><i class="fas fa-robot"></i> scikit-learn <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
+                <div class="skill-item"><i class="fab fa-python"></i> Pandas <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%"></div></div></div>
+                <div class="skill-item"><i class="fab fa-python"></i> NumPy <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%"></div></div></div>
+                <div class="skill-item"><i class="fab fa-python"></i> TensorFlow <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%"></div></div></div>
+                <div class="skill-item"><i class="fas fa-chart-bar"></i> Matplotlib <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%"></div></div></div>
+            </div>
+        </div>
+        <div class="skills-category">
+            <h3>Tools & Platforms</h3>
+            <div class="skills-list">
+                <div class="skill-item"><i class="fab fa-git-alt"></i> Git <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
+                <div class="skill-item"><i class="fab fa-github"></i> GitHub <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
+                <div class="skill-item"><i class="fab fa-aws"></i> AWS <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%"></div></div></div>
+                <div class="skill-item"><i class="fab fa-google"></i> GCP <div class="skill-bar"><div class="skill-bar-fill" style="width: 65%"></div></div></div>
+                <div class="skill-item"><i class="fab fa-microsoft"></i> Azure <div class="skill-bar"><div class="skill-bar-fill" style="width: 60%"></div></div></div>
+            </div>
+        </div>
+        <div class="skills-category">
+            <h3>ML Algorithms</h3>
+            <div class="skills-list">
+                <div class="skill-item"><i class="fas fa-project-diagram"></i> KNN, K-Means, Regression, Random Forest <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%"></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honors & Highlights Section -->
+    <section id="honors" class="section fade-in slide-in-left">
+        <h2 class="section-heading"><i class="fas fa-award"></i> Honors & Highlights</h2>
+        <ul class="achievements-list">
+            <li><i class="fas fa-graduation-cap"></i> <strong>SheFi Scholar</strong> <span>Top 20% of 1,000+ applicants, Web3 Leadership</span></li>
+            <li><i class="fas fa-trophy"></i> <strong>Hackathon Finalist</strong> <span>Ranked 7th/200 (Trusting Brains)</span></li>
+            <li><i class="fas fa-certificate"></i> <strong>Certifications</strong> <span>AWS, Google, Deloitte, Azure (ongoing)</span></li>
+            <li><i class="fas fa-users"></i> <strong>Leadership</strong> <span>Women Techmakers, Vice/Code</span></li>
+        </ul>
+        <a href="honors.html" class="see-all-link">See all achievements</a>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section fade-in slide-in-right">
+        <h2 class="section-heading"><i class="fas fa-graduation-cap"></i> Education</h2>
+        <div class="card-grid">
+            <div class="edu-card">
+                <h3>B.Tech in Computer Science (AI & ML) | GPA: 9.06/10</h3>
+                <span class="edu-degree">Graphic Era Hill University</span>
+                <span class="edu-date">Aug 2023 – Jun 2027</span>
+                <span class="edu-date">Bhimtal, Uttarakhand</span>
+            </div>
+            <div class="edu-card">
+                <h3>Intermediate: 88%</h3>
+                <span class="edu-degree">Hartmann College</span>
+                <span class="edu-date">Jun 2021 – Mar 2023</span>
+                <span class="edu-date">Bareilly, Uttar Pradesh</span>
+            </div>
+            <div class="edu-card">
+                <h3>Matriculation: 93%</h3>
+                <span class="edu-degree">Hartmann College</span>
+                <span class="edu-date">Jun 2019 – Mar 2021</span>
+                <span class="edu-date">Bareilly, Uttar Pradesh</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section fade-in slide-in-left">
+      <div class="contact-container">
+        <div class="contact-info">
+          <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:pmanocha553@gmail.com">pmanocha553@gmail.com</a></p>
+          <p><i class="fas fa-phone"></i> +91 8532018298</p>
+          <div class="contact-socials">
+            <a href="https://linkedin.com/in/pavni-manocha" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/pmanocha07" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <form class="contact-form" action="https://formsubmit.co/pmanocha553@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+          <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+    // Minimal fade-in on scroll for .fade-in sections
+    document.addEventListener('DOMContentLoaded', function() {
+      const faders = document.querySelectorAll('.fade-in');
+      const appearOptions = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
+      const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        });
+      }, appearOptions);
+      faders.forEach(fader => { appearOnScroll.observe(fader); });
+    });
+    </script>
 </body>
 </html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honors & Achievements | Pavni Manocha</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .honors-group {
+            margin-bottom: 2.5rem;
+        }
+        .honors-group h3 {
+            font-size: 1.18rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .achievements-list {
+            list-style: none;
+            padding: 0;
+        }
+        .achievements-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.1rem;
+            font-size: 1.07rem;
+        }
+        .achievements-list i {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-top: 0.1rem;
+        }
+        .achievements-list strong {
+            margin-right: 0.3rem;
+        }
+        .achievements-list span {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#honors">Honors</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+    <section class="section fade-in slide-in-left">
+        <h2 class="section-heading"><i class="fas fa-award"></i> Full Honors & Achievements</h2>
+        <div class="honors-group">
+            <h3><i class="fas fa-graduation-cap"></i> Scholarships</h3>
+            <ul class="achievements-list">
+                <li><strong>SheFi Scholar (Season 14, Full Scholarship):</strong> Selected among top 20% of 1,000+ applicants for 8-week Web3 leadership program (Jul 2025) covering blockchain, DeFi, DAOs, NFTs & AI.</li>
+            </ul>
+        </div>
+        <div class="honors-group">
+            <h3><i class="fas fa-trophy"></i> Hackathons</h3>
+            <ul class="achievements-list">
+                <li><strong>Trusting Brains:</strong> Ranked 7th/200</li>
+                <li><strong>GEHU Haldwani '25:</strong> 24hr Hackathon Finalist</li>
+                <li><strong>SIH '24:</strong> Smart India Hackathon Finalist</li>
+            </ul>
+        </div>
+        <div class="honors-group">
+            <h3><i class="fas fa-certificate"></i> Certifications</h3>
+            <ul class="achievements-list">
+                <li><strong>Deloitte:</strong> Data Analytics Job Simulation</li>
+                <li><strong>AWS:</strong> Cloud Practitioner, Cloud Quest</li>
+                <li><strong>Google:</strong> Gen AI</li>
+                <li><strong>Azure:</strong> AI-900 (ongoing)</li>
+            </ul>
+        </div>
+        <div class="honors-group">
+            <h3><i class="fas fa-award"></i> Academic Honors</h3>
+            <ul class="achievements-list">
+                <li><strong>Honors Student:</strong> Exceptional First-Year Academic Performance</li>
+                <li><strong>Stanford Code in Place 2025:</strong> Completed Python training via applied, project-based coursework</li>
+                <li><strong>Deshaw Ascend 2024:</strong> Interview Round Qualifier (Top 5%)</li>
+            </ul>
+        </div>
+        <div class="honors-group">
+            <h3><i class="fas fa-users"></i> Leadership</h3>
+            <ul class="achievements-list">
+                <li><strong>Women Techmakers, WeCode, NGOs:</strong> Taught coding to 50+ students, led outreach and tech initiatives</li>
+            </ul>
+        </div>
+    </section>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const faders = document.querySelectorAll('.fade-in');
+      const appearOptions = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
+      const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        });
+      }, appearOptions);
+      faders.forEach(fader => { appearOnScroll.observe(fader); });
+    });
+    </script>
+</body>
+</html> 
