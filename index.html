@@ -456,23 +456,48 @@
 
     <!-- Contact Section -->
     <section id="contact" class="section fade-in slide-in-left">
-      <div class="contact-container">
-        <div class="contact-info">
-          <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
-          <p><i class="fas fa-envelope"></i> <a href="mailto:pmanocha553@gmail.com">pmanocha553@gmail.com</a></p>
-          <p><i class="fas fa-phone"></i> +91 8532018298</p>
-          <div class="contact-socials">
-            <a href="https://linkedin.com/in/pavni-manocha" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/pmanocha07" target="_blank"><i class="fab fa-github"></i></a>
-            <!-- <a href="https://www.facebook.com/pavni.manocha.9/" target="_blank"><i class="fab fa-facebook"></i></a> -->
+      <div class="contact-unified-card">
+        <div class="contact-profile-card">
+          <img src="assets/profile.jpg" alt="Pavni Manocha" class="contact-profile-pic">
+          <div class="contact-profile-details">
+            <h2>Let's Connect!</h2>
+            <p class="contact-cta">I'm always open to new opportunities, collaborations, or just a friendly chat. Reach out and let's make something amazing together!</p>
           </div>
         </div>
-        <form class="contact-form" action="https://formsubmit.co/pmanocha553@gmail.com" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <form class="contact-form" id="contactForm" action="https://formsubmit.co/pmanocha553@gmail.com" method="POST" autocomplete="on">
+          <!-- Honeypot field for spam prevention -->
+          <input type="text" name="_honey" style="display:none">
+          <!-- Disable CAPTCHA -->
+          <input type="hidden" name="_captcha" value="false">
+          <!-- Redirect to thank you message -->
+          <input type="hidden" name="_next" value="#thankyou-contact">
+          <div class="floating-label-group">
+            <input type="text" name="name" id="contact-name" class="floating-input" placeholder=" " required>
+            <label for="contact-name">Your Name</label>
+          </div>
+          <div class="floating-label-group">
+            <input type="email" name="email" id="contact-email" class="floating-input" placeholder=" " required>
+            <label for="contact-email">Your Email</label>
+          </div>
+          <div class="floating-label-group">
+            <textarea name="message" id="contact-message" class="floating-input" placeholder=" " rows="4" required></textarea>
+            <label for="contact-message">Your Message</label>
+          </div>
           <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
         </form>
+        <div class="contact-method contact-email" style="margin-top:1.2rem;">
+          <span class="contact-icon animated-icon"><i class="fas fa-envelope"></i></span>
+          <a href="mailto:pmanocha553@gmail.com">pmanocha553@gmail.com</a>
+        </div>
+        <div class="contact-method contact-socials" style="margin-top:0.5rem;">
+          <span class="contact-icon animated-icon"><i class="fas fa-share-alt"></i></span>
+          <a href="https://linkedin.com/in/pavni-manocha" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/pmanocha07" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/pmanocha_07" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div id="thankyou-contact" class="thankyou-message" style="display:none;">
+        <i class="fas fa-check-circle"></i> Thank you for reaching out! I'll get back to you soon.
       </div>
     </section>
 
@@ -489,6 +514,14 @@
         });
       }, appearOptions);
       faders.forEach(fader => { appearOnScroll.observe(fader); });
+    });
+
+    // Show thank you message after form submission (client-side fallback)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      setTimeout(function() {
+        document.querySelector('.contact-form').style.display = 'none';
+        document.getElementById('thankyou-contact').style.display = 'block';
+      }, 500); // Wait for formsubmit to redirect
     });
     </script>
 </body>
