@@ -5,100 +5,126 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Pavni Manocha</title>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .proj-detail-section {
-      max-width: 900px;
-      margin: 2.5rem auto;
-      background: var(--card-bg);
-      border-radius: 18px;
-      box-shadow: 0 2px 12px rgba(30,40,60,0.08);
-      padding: 2.5rem 2rem;
-    }
-    .proj-detail-title {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-    .proj-detail-meta {
-      color: #888;
-      font-size: 1.05rem;
-      margin-bottom: 1.2rem;
-    }
-    .proj-detail-images {
-      display: flex;
-      gap: 1.2rem;
-      margin-bottom: 1.2rem;
-      flex-wrap: wrap;
-    }
-    .proj-detail-images img {
-      width: 220px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(35,41,70,0.10);
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <nav class="main-nav">
+<body class="cosmic-body">
+  <nav class="cosmic-nav">
     <a href="index.html#hero">Home</a>
     <a href="index.html#about">About</a>
     <a href="index.html#experience">Experience</a>
-    <a href="index.html#projects">Projects</a>
+    <a href="index.html#projects" class="active">Projects</a>
     <a href="index.html#skills">Skills</a>
     <a href="index.html#contact">Contact</a>
   </nav>
 
-  <section id="diabesure" class="proj-detail-section">
-    <div class="proj-detail-title">DiabeSure: Diabetes Prediction Model</div>
-    <div class="proj-detail-meta">May 2025 &mdash; Python, Scikit-learn, Pandas</div>
-    <div class="proj-detail-images">
-      <img src="assets/diab.jpg" alt="DiabeSure Screenshot" />
-    </div>
-    <ul>
-      <li>Devised a machine learning model to predict diabetes risk using health metrics.</li>
-      <li>Enhanced data preprocessing with imputation and normalization, boosting model accuracy by 10%.</li>
-      <li>Optimized feature selection, leading to improved robustness and overall performance.</li>
-    </ul>
-  </section>
+  <main class="cosmic-main">
+    <section class="cosmic-section" id="diabesure">
+      <div class="glass-card">
+        <h2 class="cosmic-title">DiabeSure: Diabetes Prediction Model</h2>
+        <p class="cosmic-meta">May 2025 · Python, Scikit-learn, Pandas</p>
+        <div class="proj-images">
+          <img src="assets/diab.jpg" alt="DiabeSure Screenshot" />
+        </div>
+        <ul class="cosmic-list">
+          <li>Devised a machine learning model to predict diabetes risk using health metrics.</li>
+          <li>Enhanced data preprocessing with imputation and normalization, boosting model accuracy by 10%.</li>
+          <li>Optimized feature selection, leading to improved robustness and overall performance.</li>
+        </ul>
+      </div>
+    </section>
 
-  <section id="bonded" class="proj-detail-section">
-    <div class="proj-detail-title">bondEd: EdTech Platform</div>
-    <div class="proj-detail-meta">Feb 2025 &mdash; HTML, CSS, JavaScript</div>
-    <div class="proj-detail-images">
-      <img src="assets/bonded.jpg" alt="bondEd Logo" />
-    </div>
-    <ul>
-      <li>Built a comprehensive platform connecting alumni and students within technical education departments.</li>
-      <li>Integrated features including searchable directories, mentorship pairing, internship postings, forums, and event scheduling.</li>
-    </ul>
-  </section>
+    <section class="cosmic-section" id="bonded">
+      <div class="glass-card">
+        <h2 class="cosmic-title">bondEd: EdTech Platform</h2>
+        <p class="cosmic-meta">Feb 2025 · HTML, CSS, JavaScript</p>
+        <div class="proj-images">
+          <img src="assets/bonded.jpg" alt="bondEd Logo" />
+        </div>
+        <ul class="cosmic-list">
+          <li>Built a comprehensive platform connecting alumni and students within technical education departments.</li>
+          <li>Integrated features including searchable directories, mentorship pairing, internship postings, forums, and event scheduling.</li>
+        </ul>
+      </div>
+    </section>
 
-  <section id="dineswift" class="proj-detail-section">
-    <div class="proj-detail-title">DineSwift: Remote & Onsite Food Ordering Website</div>
-    <div class="proj-detail-meta">Nov 2024 &mdash; HTML, CSS, JavaScript</div>
-    <div class="proj-detail-images">
-      <img src="assets/dineswift.png" alt="DineSwift Screenshot" />
-      <img src="assets/dinewift.jpg" alt="DineSwift Logo" />
-    </div>
-    <ul>
-      <li>Engineered a real-time order tracking system with token authentication, cutting wait times by 25% and improving throughput to 10 orders/hour.</li>
-      <li>Implemented role-based design for customers, kitchen staff, and administrators, enhancing user experience and operational efficiency.</li>
-    </ul>
-  </section>
+    <section class="cosmic-section" id="dineswift">
+      <div class="glass-card">
+        <h2 class="cosmic-title">DineSwift: Remote & Onsite Food Ordering Website</h2>
+        <p class="cosmic-meta">Nov 2024 · HTML, CSS, JavaScript</p>
+        <div class="proj-images">
+          <img src="assets/dineswift.png" alt="DineSwift Screenshot" />
+          <img src="assets/dinewift.jpg" alt="DineSwift Logo" />
+        </div>
+        <ul class="cosmic-list">
+          <li>Engineered a real-time order tracking system with token authentication, cutting wait times by 25% and improving throughput to 10 orders/hour.</li>
+          <li>Implemented role-based design for customers, kitchen staff, and administrators, enhancing user experience and operational efficiency.</li>
+        </ul>
+      </div>
+    </section>
 
-  <section id="tunenest" class="proj-detail-section">
-    <div class="proj-detail-title">TuneNest: Music Recommendation Platform</div>
-    <div class="proj-detail-meta">Aug 2024 &mdash; HTML, CSS, JavaScript</div>
-    <div class="proj-detail-images">
-      <img src="assets/TuneNest.jpg" alt="TuneNest Logo" />
-    </div>
-    <ul>
-      <li>Developed a personalized music recommendation system using collaborative filtering and audio feature analysis.</li>
-      <li>Built a web interface with Flask for users to explore, rate, and receive tailored song suggestions.</li>
-      <li>Integrated scikit-learn for model training and evaluation, improving recommendation accuracy and user engagement.</li>
-    </ul>
-  </section>
+    <section class="cosmic-section" id="tunenest">
+      <div class="glass-card">
+        <h2 class="cosmic-title">TuneNest: Music Recommendation Platform</h2>
+        <p class="cosmic-meta">Aug 2024 · HTML, CSS, JavaScript</p>
+        <div class="proj-images">
+          <img src="assets/TuneNest.jpg" alt="TuneNest Logo" />
+        </div>
+        <ul class="cosmic-list">
+          <li>Developed a personalized music recommendation system using collaborative filtering and audio feature analysis.</li>
+          <li>Built a web interface with Flask for users to explore, rate, and receive tailored song suggestions.</li>
+          <li>Integrated scikit-learn for model training and evaluation, improving recommendation accuracy and user engagement.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="cosmic-footer">
+    <p>© <span id="year"></span> Pavni Manocha — Built with cosmic vibes</p>
+  </footer>
+
+  <style>
+    .proj-images {
+      display: flex;
+      gap: 1.2rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    .proj-images img {
+      width: 220px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .proj-images img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.3);
+    }
+    .cosmic-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 1.5rem;
+    }
+    .cosmic-list li {
+      padding: 0.8rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+    }
+    .cosmic-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #a78bfa;
+    }
+  </style>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
-</html> 
+</html>

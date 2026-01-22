@@ -6,101 +6,99 @@
   <title>Experience | Pavni Manocha</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="cosmic-body">
+  <nav class="cosmic-nav">
+    <a href="index.html#hero">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#experience" class="active">Experience</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <main class="cosmic-main">
+    <section class="cosmic-section" id="iitr">
+      <div class="glass-card">
+        <h2 class="cosmic-title">Research Intern, IIT Roorkee</h2>
+        <p class="cosmic-meta">Indian Institute of Technology Roorkee · Jun 2025 – Aug 2025 | Roorkee, Uttarakhand</p>
+        <div class="exp-images">
+          <img src="assets/team_iitr.jpg" alt="Team at IIT Roorkee" />
+          <img src="assets/work_iitr.jpg" alt="Work Culture at IIT Roorkee" />
+        </div>
+        <ul class="cosmic-list">
+          <li>Contributed to a Raspberry Pi–based traffic violation detection system, helping boost detection accuracy by 30% and monitoring efficiency.</li>
+          <li>Developed real-time backend syncing mechanisms to ensure higher data fidelity and operational consistency.</li>
+          <li>Integrated Python-based multi-level logging with robust exception handling for seamless debugging and traceability.</li>
+          <li>Analyzed traffic footage on the Indian Traffic Dataset, attaining 0.91 mAP@50 in performance benchmarks.</li>
+          <li>Architected fault-tolerant passenger counting pipelines using CSV logging, Firebase triggers, and YAML-configured error codes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cosmic-section" id="aapke-saath">
+      <div class="glass-card">
+        <h2 class="cosmic-title">Intern, Aapke Saath Foundation</h2>
+        <p class="cosmic-meta">Aapke Saath Foundation · Mar 2025 – May 2025 | Bareilly, Uttar Pradesh</p>
+        <div class="exp-images">
+          <img src="assets/ngo0.png" alt="Team at Aapke Saath Foundation" />
+          <img src="assets/ngo1.png" alt="Work Culture at Aapke Saath Foundation" />
+        </div>
+        <ul class="cosmic-list">
+          <li>Revamped 80% of the NGO's website front end using HTML, CSS & JavaScript, improving load time and mobile responsiveness.</li>
+          <li>Collaborated with 5+ stakeholders to restructure key user flows, enhancing volunteer sign-up conversions by 25%.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="cosmic-footer">
+    <p>© <span id="year"></span> Pavni Manocha — Built with cosmic vibes</p>
+  </footer>
+
   <style>
-    .exp-detail-section {
-      max-width: 900px;
-      margin: 2.5rem auto;
-      background: var(--card-bg);
-      border-radius: 18px;
-      box-shadow: 0 2px 12px rgba(30,40,60,0.08);
-      padding: 2.5rem 2rem;
-    }
-    .exp-detail-title {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-    .exp-detail-meta {
-      color: #888;
-      font-size: 1.05rem;
-      margin-bottom: 1.2rem;
-    }
-    .exp-detail-images {
+    .exp-images {
       display: flex;
       gap: 1.2rem;
-      margin-bottom: 1.2rem;
+      margin: 1.5rem 0;
       flex-wrap: wrap;
     }
-    .exp-detail-images img {
+    .exp-images img {
       width: 220px;
       height: 140px;
       object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(35,41,70,0.10);
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .exp-images img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.3);
+    }
+    .cosmic-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 1.5rem;
+    }
+    .cosmic-list li {
+      padding: 0.8rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+    }
+    .cosmic-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #a78bfa;
     }
   </style>
-</head>
-<body>
-  <div id="navbar-container"></div>
-  <div class="header">
-    <div class="name">Experience</div>
-    <div class="contact-info">
-    </div>
-  </div>
-  <!-- <div class="section">
-    <h2>Experience</h2>
-    <h3>Resume Worded &amp; Co. <span style="float:right; font-weight:normal;">Oct 2017 – Present | San Francisco, CA</span></h3>
-    <ul>
-      <li>Managed cross-functional team of 10 in 3 locations; launched Miami office, grew revenue by 200% in 9 months.</li>
-      <li>Designed training and mentoring programs for new analysts; reduced onboarding time by 50%.</li>
-      <li>Achieved $200K reduction in department overspend by establishing ROI metrics and budget controls.</li>
-    </ul>
-    <h3>Instamake <span style="float:right; font-weight:normal;">Jun 2015 – Oct 2017 | San Francisco, CA</span></h3>
-    <ul>
-      <li>Spearheaded a major pricing restructure, increasing average sale 35% and margin 12%.</li>
-      <li>Promoted within 12 months due to strong performance and organizational impact.</li>
-      <li>Identified steps to reduce return rates by 10%, saving $75k in costs.</li>
-    </ul>
-    <h3>Resume Worded &amp; Co. <span style="float:right; font-weight:normal;">Jun 2011 – May 2013 | Austin, TX</span></h3>
-    <ul>
-      <li>Analyzed data from 25,000 monthly users to guide marketing and product strategies.</li>
-      <li>Drove redevelopment of internal tracking system, resulting in 20+ new features and 15% operation time reduction.</li>
-    </ul>
-  </div> -->
-  <section id="iitr" class="exp-detail-section">
-    <div class="exp-detail-title">Research Intern, IIT Roorkee</div>
-    <div class="exp-detail-meta">Indian Institute of Technology Roorkee &mdash; Jun 2025 – Aug 2025 | Roorkee, Uttarakhand</div>
-    <div class="exp-detail-images">
-      <img src="assets/team_iitr.jpg" alt="Team at IIT Roorkee" />
-      <img src="assets/work_iitr.jpg" alt="Work Culture at IIT Roorkee" />
-    </div>
-    <ul>
-      <li>Contributed to a Raspberry Pi–based traffic violation detection system, helping boost detection accuracy by 30% and monitoring efficiency.</li>
-      <li>Developed real-time backend syncing mechanisms to ensure higher data fidelity and operational consistency.</li>
-      <li>Integrated Python-based multi-level logging with robust exception handling for seamless debugging and traceability.</li>
-      <li>Analyzed traffic footage on the Indian Traffic Dataset, attaining 0.91 mAP@50 in performance benchmarks.</li>
-      <li>Architected fault-tolerant passenger counting pipelines using CSV logging, Firebase triggers, and YAML-configured error codes.</li>
-    </ul>
-  </section>
-  <section id="aapke-saath" class="exp-detail-section">
-    <div class="exp-detail-title">Intern, Aapke Saath Foundation</div>
-    <div class="exp-detail-meta">Aapke Saath Foundation &mdash; Mar 2025 – May 2025 | Bareilly, Uttar Pradesh</div>
-    <div class="exp-detail-images">
-      <img src="assets/ngo0.png" alt="Team at Aapke Saath Foundation" />
-      <img src="assets/ngo1.png" alt="Work Culture at Aapke Saath Foundation" />
-    </div>
-    <ul>
-      <li>Revamped 80% of the NGO's website front end using HTML, CSS & JavaScript, improving load time and mobile responsiveness.</li>
-      <li>Collaborated with 5+ stakeholders to restructure key user flows, enhancing volunteer sign-up conversions by 25%.</li>
-    </ul>
-  </section>
   <script>
-    fetch('components/navbar.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('navbar-container').innerHTML = html;
-      });
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
-</html> 
+</html>

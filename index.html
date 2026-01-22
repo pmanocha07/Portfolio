@@ -3,526 +3,694 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pavni Manocha | Professional Portfolio</title>
+    <title>Pavni Manocha | Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        :root {
-            --primary: #232946;
-            --accent: #FEC260;
-            --background: #F4F6FB;
-            --card-bg: #fff;
-            --text: #232946;
-            --gray: #B8C1EC;
+        * {
+            cursor: none !important;
         }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Montserrat', Arial, sans-serif; background: var(--background); color: var(--text); }
-        .section-title { display: flex; align-items: center; gap: 0.7rem; font-size: 1.7rem; font-weight: 700; letter-spacing: 1px; }
-        .section-title i { color: var(--primary); font-size: 1.4em; }
-        .about-text { font-size: 1.18rem; color: var(--secondary); margin: 1.2rem 0 0.7rem 0; }
-        /* HERO BACKGROUND */
-        .hero-bg {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: linear-gradient(120deg,rgba(35,41,70,0.65) 0%,rgba(35,41,70,0.25) 100%), url('assets/profile.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            box-shadow: 0 4px 32px rgba(35,41,70,0.10);
-            border-radius: 0 0 32px 32px;
-            overflow: hidden;
-        }
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(120deg,rgba(35,41,70,0.65) 0%,rgba(35,41,70,0.25) 100%);
-            z-index: 1;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: #fff;
-            width: 100%;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 2.5rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-name {
-            font-family: 'Montserrat', Arial, sans-serif;
-            font-size: 3rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-            margin-bottom: 0.7rem;
-            text-shadow: 0 2px 12px rgba(35,41,70,0.18);
-        }
-        .hero-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #FEC260;
-            margin-bottom: 0.5rem;
-        }
-        .hero-location {
-            font-size: 1.1rem;
-            color: #e0e0e0;
-            margin-bottom: 1.2rem;
-        }
-        .hero-contact {
-            font-size: 1.1rem;
-            color: #e0e0e0;
-            margin-bottom: 1.2rem;
-        }
-        .hero-socials {
-            display: flex;
-            gap: 1.2rem;
-            margin-top: 1.2rem;
-        }
-        .hero-socials a {
-            color: #fff;
-            font-size: 2rem;
-            transition: color 0.2s, transform 0.2s;
-        }
-        .hero-socials a:hover {
-            color: #4F8CFF;
-            transform: scale(1.15);
-        }
-        /* CONTACT SECTION */
-        #contact {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 60vh;
-            background: linear-gradient(120deg, #F4F6FB 60%, #4F8CFF11 100%);
-            border-radius: 32px;
-            box-shadow: 0 2px 16px rgba(35,41,70,0.10);
-            margin-bottom: 2rem;
-        }
-        .contact-card {
-            background: var(--card-bg);
-            border-radius: 18px;
-            box-shadow: 0 2px 16px rgba(35,41,70,0.10);
-            padding: 2.5rem 2rem 2rem 2rem;
-            max-width: 420px;
-            width: 100%;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-        }
-        .contact-card h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        .contact-card p {
-            color: var(--primary);
-            font-size: 1.1rem;
-            margin-bottom: 1.2rem;
-        }
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
-        }
-        .contact-form input, .contact-form textarea {
-            padding: 0.8rem;
-            border-radius: 8px;
-            border: 1.5px solid var(--gray);
-            font-size: 1rem;
-            background: var(--background);
-            transition: border 0.2s;
-        }
-        .contact-form input:focus, .contact-form textarea:focus {
-            border: 1.5px solid var(--accent);
-            outline: none;
-        }
-        .contact-form button {
-            background: var(--accent);
-            color: var(--primary);
-            border: none;
-            border-radius: 8px;
-            padding: 0.7rem 1.5rem;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.2s, box-shadow 0.2s;
-            box-shadow: 0 1px 4px rgba(30,40,60,0.07);
-            margin-top: 0.5rem;
-        }
-        .contact-form button:hover {
-            background: var(--primary);
-            color: #fff;
-        }
-        .contact-social {
-            margin-top: 1.2rem;
-        }
-        .contact-social a {
-            color: var(--primary);
-            background: var(--background);
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--terminal-green);
             border-radius: 50%;
-            margin: 0 0.3rem;
-            font-size: 1.3rem;
-            width: 38px; height: 38px; line-height: 38px; display: inline-block;
-            transition: background 0.2s, color 0.2s, transform 0.2s;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            box-shadow: 0 0 10px var(--terminal-green);
         }
-        .contact-social a:hover {
-            background: var(--accent);
-            color: #fff;
-            transform: scale(1.13);
-        }
-        @media (max-width: 700px) {
-            .hero-bg { min-height: 60vh; }
-            .hero-name { font-size: 2rem; }
-            .hero-title { font-size: 1.1rem; }
-            .contact-card { padding: 1.2rem 0.5rem; }
-        }
-        .section {
-            max-width: 1100px;
-            margin: 3rem auto;
-            background: var(--card-bg);
-            border-radius: 24px;
-            box-shadow: 0 2px 16px rgba(35,41,70,0.10);
-            padding: 2.5rem 2rem;
-        }
-        .section-heading {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-        }
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-        .about-card {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .about-photo {
-            width: 120px;
-            height: 120px;
+        .custom-cursor-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--terminal-green);
             border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--card-bg);
-            box-shadow: 0 2px 12px rgba(35,41,70,0.18);
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.05s ease;
         }
-        .exp-card, .project-card, .edu-card {
-            background: var(--background);
-            border-radius: 18px;
-            box-shadow: 0 1px 8px rgba(35,41,70,0.07);
-            padding: 2rem 1.5rem;
-            transition: box-shadow 0.2s, transform 0.2s;
-            display: flex;
-            flex-direction: column;
-            gap: 0.7rem;
-        }
-        .exp-card:hover, .project-card:hover, .edu-card:hover {
-            box-shadow: 0 4px 24px rgba(79,140,255,0.13);
-            transform: translateY(-4px) scale(1.02);
-        }
-        .exp-role, .edu-degree {
-            font-weight: 600;
-            color: var(--accent);
-        }
-        .exp-date, .edu-date {
-            font-size: 0.95rem;
-            color: #888;
-        }
-        .skills-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.7rem;
-            margin-top: 1.2rem;
-        }
-        .skill-badge {
-            background: var(--gray);
-            color: var(--primary);
-            border-radius: 20px;
-            padding: 0.4rem 1.1rem;
-            font-size: 1rem;
-            font-weight: 500;
-            box-shadow: 0 1px 4px rgba(30,40,60,0.07);
-            transition: background 0.2s, color 0.2s;
-        }
-        .skill-badge:hover {
-            background: var(--accent);
-            color: #fff;
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(40px);
-            animation: fadeInUp 1.1s cubic-bezier(.23,1.01,.32,1) 0.1s both;
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @media (max-width: 900px) {
-            .section { padding: 1.2rem 0.7rem; }
-            .about-card { flex-direction: column; gap: 1.2rem; }
-        }
-        @media (max-width: 700px) {
-            .section { padding: 0.7rem 0.2rem; }
-            .card-grid { grid-template-columns: 1fr; }
-            .about-photo { width: 80px; height: 80px; }
-        }
-        .responsive-contact {
-            max-width: 420px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 2.5rem 2rem 2rem 2rem;
-            box-sizing: border-box;
-        }
-        @media (max-width: 600px) {
-            .responsive-contact {
-                padding: 1.2rem 0.5rem;
-                min-width: 0;
-                max-width: 98vw;
-            }
-            .contact-form input, .contact-form textarea {
-                font-size: 1rem;
-            }
+        a:hover ~ .custom-cursor,
+        button:hover ~ .custom-cursor {
+            transform: scale(1.5);
         }
     </style>
 </head>
 <body>
-    <nav class="main-nav">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-        <span class="nav-social">
-            <a href="https://github.com/pmanocha07" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/pavnimanocha" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://instagram.com/pmanocha_07" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <!-- <a href="https://twitter.com/pmanocha_07" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a> -->
-            <!-- <a href="https://www.facebook.com/pavni.manocha.9/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a> -->
-        </span>
-    </nav>
-
-    <!-- Hero Section styled like shaq-portfolio.netlify.app -->
-    <div class="hero-bg" id="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-name">Pavni Manocha</h1>
-            <div class="hero-title">Software Engineer and Data Analyst</div>
-            <div class="hero-location">Bhimtal, India</div>
-            <div class="hero-contact">📞 +91 8532018298 &nbsp; | &nbsp; <a href="mailto:pmanocha553@gmail.com" style="color:#FEC260;">pmanaocha553@gmail.com</a></div>
-            <div class="hero-socials" style="margin-top:1.2rem;">
-                <a href="https://github.com/pmanocha07" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/pavni-manocha" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://instagram.com/pmanocha_07" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <!-- <a href="https://x.com/pmanocha_07" target="_blank" title="X"><i class="fab fa-x-twitter"></i></a> -->
-                <!-- <a href="https://www.facebook.com/pavni.manocha.9/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a> -->
-            </div>
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+    <div class="terminal-wrapper">
+        <div class="interactive-bg">
+            <canvas id="particleCanvas"></canvas>
+            <div class="grid-overlay"></div>
         </div>
+        <nav class="terminal-nav">
+            <div class="nav-content">
+                <div class="nav-links">
+                    <a href="#about" class="nav-link">01 About</a>
+                    <a href="#projects" class="nav-link">02 Projects</a>
+                    <a href="#experience" class="nav-link">03 Experience</a>
+                    <a href="#awards" class="nav-link">04 Awards</a>
+                    <a href="#contact" class="nav-link">05 Contact</a>
+                </div>
+            </div>
+            <div class="scroll-progress"></div>
+        </nav>
+
+        <main class="terminal-main">
+            <section class="hero-section" id="hero">
+                <div class="terminal-status">
+                    <span class="status-dot"></span>
+                    <span>System Online.</span>
+                    <span class="watching">Watching you...</span>
+                </div>
+                <div class="hero-content">
+                    <div class="terminal-prompt">
+                        <span class="prompt-user">pm@portfolio</span>
+                        <span class="prompt-separator">:</span>
+                        <span class="prompt-path">~</span>
+                        <span class="prompt-char">$</span>
+                    </div>
+                    <h1 class="hero-name">Pavni Manocha.</h1>
+                    <h2 class="hero-subtitle">Architecting Intelligence across AI, Data & Web.</h2>
+                    <div class="divider-line">|</div>
+                    <p class="hero-description">
+                        I engineer the convergence of Artificial Intelligence, Data Analytics, and Web Applications. 
+                        From ML-powered healthcare tools to scalable digital platforms, I build technology that thinks 
+                        and creates meaningful impact.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-terminal">Check out my work</a>
+                        <a href="assets/Pavni_Manocha_Resume.pdf" target="_blank" class="btn-terminal btn-secondary">Resume</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="section fade-in">
+                <div class="section-header">
+                    <span class="section-number">01.</span>
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                <div class="about-content">
+                    <p class="about-text">
+                        I am a Computer Science student at Graphic Era Hill University (9.06/10 GPA) with a deep focus 
+                        on Artificial Intelligence, Machine Learning, and Web Development. My passion lies in the lab—fusing 
+                        algorithms with real-world applications to create intelligent systems and responsive digital ecosystems. 
+                        My background spans Full-Stack Engineering and Data Analytics, having worked on projects that deploy 
+                        scalable solutions. However, my primary work involves AI-ML Convergence. From building prediction models 
+                        for healthcare to developing data-driven web applications, I develop systems that learn, think, and act. 
+                        I don't just write code; I build intelligent interfaces between data and meaningful outcomes.
+                    </p>
+                    <div class="tech-stack">
+                        <p class="tech-title">Here are a few technologies I've been working with recently:</p>
+                        <div class="tech-grid">
+                            <div class="tech-item">Python</div>
+                            <div class="tech-item">Java</div>
+                            <div class="tech-item">C/C++</div>
+                            <div class="tech-item">HTML/CSS/JavaScript</div>
+                            <div class="tech-item">TensorFlow</div>
+                            <div class="tech-item">Scikit-learn</div>
+                            <div class="tech-item">Pandas</div>
+                            <div class="tech-item">NumPy</div>
+                            <div class="tech-item">Flask</div>
+                            <div class="tech-item">Git/GitHub</div>
+                            <div class="tech-item">AWS</div>
+                            <div class="tech-item">Azure</div>
+                            <div class="tech-item">GCP</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="section fade-in">
+                <div class="section-header">
+                    <span class="section-number">02.</span>
+                    <h2 class="section-title">Some Things I've Built</h2>
+                </div>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-name">DiabeSure</h3>
+                            <div class="project-links">
+                                <a href="projects.html#diabesure" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/pmanocha07/DiabeSure" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            An ML-powered diabetes prediction tool designed to improve screening workflows and early detection. 
+                            DiabeSure leverages advanced machine learning algorithms to analyze patient data and provide 
+                            intelligent risk assessments.
+                        </p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Scikit-learn</span>
+                            <span>Healthcare</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-name">bondEd</h3>
+                            <div class="project-links">
+                                <a href="projects.html#bonded" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/pmanocha07" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A personalized learning platform for students & parents with community-first UX. bondEd bridges 
+                            the gap between education and engagement through intelligent content delivery.
+                        </p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Node</span>
+                            <span>Product</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-name">DineSwift</h3>
+                            <div class="project-links">
+                                <a href="projects.html#dineswift" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/pmanocha07" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A hybrid food ordering platform syncing remote ordering with on-premise kiosks. DineSwift 
+                            streamlines restaurant operations through intelligent order management.
+                        </p>
+                        <div class="project-tags">
+                            <span>Product</span>
+                            <span>Systems</span>
+                            <span>Azure</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <h3 class="project-name">TuneNest</h3>
+                            <div class="project-links">
+                                <a href="projects.html#tunenest" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/pmanocha07" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A music recommendation microservice turning mood into curated playlists. TuneNest uses 
+                            advanced algorithms to understand user preferences and deliver personalized music experiences.
+                        </p>
+                        <div class="project-tags">
+                            <span>APIs</span>
+                            <span>Python</span>
+                            <span>LLMs</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="experience" class="section fade-in">
+                <div class="section-header">
+                    <span class="section-number">03.</span>
+                    <h2 class="section-title">Where I've Worked</h2>
+                </div>
+                <div class="experience-list">
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Research Intern — IIT Roorkee</h3>
+                            <span class="experience-date">Jun 2025 – Aug 2025</span>
+                        </div>
+                        <p class="experience-role">Research Intern</p>
+                        <p class="experience-description">
+                            Investigated efficient ML architectures for remote sensing datasets and co-authored an upcoming 
+                            publication. Worked on cutting-edge research in machine learning applications for satellite imagery.
+                        </p>
+                        <ul class="experience-contributions">
+                            <li>• Developed novel ML models for remote sensing data analysis</li>
+                            <li>• Collaborated with research team on publication-ready findings</li>
+                            <li>• Optimized algorithms for large-scale dataset processing</li>
+                        </ul>
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Intern — Aapke Saath Foundation</h3>
+                            <span class="experience-date">Mar 2025 – May 2025</span>
+                        </div>
+                        <p class="experience-role">Data Analytics Intern</p>
+                        <p class="experience-description">
+                            Digitized mental-health helpline data into dashboards, improving volunteer response time by 30%. 
+                            Created data-driven solutions for social impact.
+                        </p>
+                        <ul class="experience-contributions">
+                            <li>• Engineered data pipelines for helpline analytics</li>
+                            <li>• Designed interactive dashboards using Tableau</li>
+                            <li>• Reduced response time by 30% through data optimization</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section id="awards" class="section fade-in">
+                <div class="section-header">
+                    <span class="section-number">04.</span>
+                    <h2 class="section-title">Awards & Achievements</h2>
+                </div>
+                <div class="awards-grid">
+                    <article class="award-card">
+                        <h3 class="award-title">SheFi Scholar</h3>
+                        <span class="award-year">2025</span>
+                        <p class="award-description">
+                            Top 20% of 1,000+ applicants in global Web3 leadership program, demonstrating excellence in 
+                            blockchain technology and decentralized systems.
+                        </p>
+                        <a href="#" class="award-link">View Certificate →</a>
+                    </article>
+
+                    <article class="award-card">
+                        <h3 class="award-title">Hackathon Finalist</h3>
+                        <span class="award-year">2024</span>
+                        <p class="award-description">
+                            Ranked 7/200 in Trusting Brains Codeathon for accessible design, showcasing innovation in 
+                            inclusive technology solutions.
+                        </p>
+                        <a href="#" class="award-link">View Certificate →</a>
+                    </article>
+
+                    <article class="award-card">
+                        <h3 class="award-title">Certification Streak</h3>
+                        <span class="award-year">2024-2025</span>
+                        <p class="award-description">
+                            AWS Cloud Practitioner, Google Gen AI, Azure (ongoing). Continuous learning in cloud technologies 
+                            and AI platforms.
+                        </p>
+                        <a href="#" class="award-link">View Certificates →</a>
+                    </article>
+
+                    <article class="award-card">
+                        <h3 class="award-title">Academic Excellence</h3>
+                        <span class="award-year">2023-2025</span>
+                        <p class="award-description">
+                            Maintaining 9.06/10 GPA at Graphic Era Hill University, consistently ranking among top performers 
+                            in Computer Science.
+                        </p>
+                        <a href="#" class="award-link">View Details →</a>
+                    </article>
+                </div>
+            </section>
+
+            <section id="contact" class="section fade-in">
+                <div class="section-header">
+                    <span class="section-number">05.</span>
+                    <h2 class="section-title">Let's Connect</h2>
+                </div>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <p class="contact-intro">
+                            I'm currently looking for new opportunities. Whether you have a question, a project idea, or just want 
+                            to say hi, my inbox is always open.
+                        </p>
+                        <div class="contact-details">
+                            <div class="contact-detail-item">
+                                <i class="fas fa-envelope"></i>
+                                <a href="mailto:pmanocha553@gmail.com">pmanocha553@gmail.com</a>
+                            </div>
+                            <div class="contact-social">
+                                <a href="https://github.com/pmanocha07" target="_blank" class="social-link">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://linkedin.com/in/pavni-manocha" target="_blank" class="social-link">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="https://instagram.com/pmanocha_07" target="_blank" class="social-link">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <form class="contact-form" id="contactForm" action="https://formsubmit.co/pmanocha553@gmail.com" method="POST">
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="#contact">
+                    <div class="form-group">
+                        <label for="contact-name">// NAME</label>
+                        <input type="text" name="name" id="contact-name" required>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email">// EMAIL</label>
+                        <input type="email" name="email" id="contact-email" required>
+                        <span class="form-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message">// MESSAGE</label>
+                        <textarea name="message" id="contact-message" rows="5" required></textarea>
+                        <span class="form-error"></span>
+                    </div>
+                    <button type="submit" class="btn-terminal btn-submit">
+                        <span class="btn-text">Execute_Send</span>
+                        <i class="fas fa-paper-plane"></i>
+                        <span class="btn-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Sending...
+                        </span>
+                    </button>
+                    <div class="form-success" style="display: none;">
+                        <i class="fas fa-check-circle"></i> Message sent successfully!
+                    </div>
+                </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="terminal-footer">
+            <p>© <span id="year"></span> Pavni Manocha. All rights reserved.</p>
+        </footer>
     </div>
 
-    <!-- About Section -->
-    <section id="about" class="section about-section fade-in slide-in-left">
-        <div class="about-card" style="display: flex; align-items: center; gap: 2.5rem;">
-            <img src="assets/circle.jpg" alt="Profile Photo" class="about-photo" style="flex-shrink: 0; width: 140px; height: 140px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 12px rgba(79,140,255,0.10);">
-            <div style="flex: 1;">
-                <h2 class="section-heading">About</h2>
-                <p class="about-text">Hi, I'm Pavni Manocha, a driven Computer Science student specializing in AI and ML. I love turning data into insights and ideas into real-world solutions. My goal is to use technology to make a positive impact, whether through innovative projects or collaborative teamwork.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section fade-in slide-in-right">
-        <h2 class="section-heading"><i class="fas fa-briefcase"></i> Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <a href="experience.html#iitr" class="timeline-link">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-title">Research Intern, IIT Roorkee</span>
-                        <span class="timeline-date">Jun 2025 – Aug 2025</span>
-                        <span class="timeline-location">Roorkee, Uttarakhand</span>
-                    </div>
-                </a>
-            </div>
-            <div class="timeline-item">
-                <a href="experience.html#aapke-saath" class="timeline-link">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-title">Intern, Aapke Saath Foundation</span>
-                        <span class="timeline-date">Mar 2025 – May 2025</span>
-                        <span class="timeline-location">Bareilly, Uttar Pradesh</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section fade-in slide-in-left">
-        <h2 class="section-heading"><i class="fas fa-folder-open"></i> Projects</h2>
-        <div class="project-showcase">
-            <a class="project-card-showcase" href="projects.html#diabesure">
-                <img src="assets/diab.jpg" alt="DiabeSure" />
-                <div class="project-card-title">DiabeSure</div>
-                <div class="project-card-tagline">Diabetes Prediction Model</div>
-            </a>
-            <a class="project-card-showcase" href="projects.html#bonded">
-                <img src="assets/bonded.jpg" alt="bondEd" />
-                <div class="project-card-title">bondEd</div>
-                <div class="project-card-tagline">EdTech Platform</div>
-            </a>
-            <a class="project-card-showcase" href="projects.html#dineswift">
-                <img src="assets/dineswift.png" alt="DineSwift" />
-                <div class="project-card-title">DineSwift</div>
-                <div class="project-card-tagline">Remote & Onsite Food Ordering</div>
-            </a>
-            <a class="project-card-showcase" href="projects.html#tunenest">
-                <img src="assets/TuneNest.jpg" alt="TuneNest" />
-                <div class="project-card-title">TuneNest</div>
-                <div class="project-card-tagline">Music Recommendation Platform</div>
-            </a>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section fade-in slide-in-right">
-        <h2 class="section-heading"><i class="fas fa-tools"></i> Skills & Certifications</h2>
-        <ul>
-            <li><strong>Programming Languages:</strong> Python, Java, C/C++, R, HTML, CSS, JavaScript</li><br>
-            <li><strong>Tools & Platforms:</strong> VS Code, Git, GitHub, AWS, Azure, GCP, Raspberry Pi</li><br>
-            <li><strong>Libraries/Frameworks:</strong> TensorFlow, Scikit-learn, Pandas, Numpy, Matplotlib, Seaborn, gsb12</li><br>
-            <li><strong>ML Algorithms:</strong> KNN, K-Means, Regression (Linear, Logistic), Random Forest</li><br>
-            <li><strong>Certifications & Training:</strong> e-Sherif Scholar (Season 14, Full Scholarship), Google India's Explore ML Program, Stanford's Code in Place 2025, 7th/200 in Codeathon by Trusting Brains</li><br>
-            <li><strong>Languages:</strong> English (fluent), Hindi (fluent), French (beginner)</li><br>
-        </ul>
-    </section>
-
-    <!-- Honors & Highlights Section -->
-    <section id="honors" class="section fade-in slide-in-left">
-        <h2 class="section-heading"><i class="fas fa-award"></i>Honors & Highlights</h2>
-        <ul class="achievements-list">
-            <li><i class="fas fa-graduation-cap"></i> <strong>SheFi Scholar</strong> <span>Top 20% of 1,000+ applicants, Web3 Leadership</span></li>
-            <li><i class="fas fa-trophy"></i> <strong>Codeathon Finalist</strong> <span>Ranked 7th/200 (Trusting Brains)</span></li>
-            <li><i class="fas fa-certificate"></i> <strong>Certifications</strong> <span>AWS Cloud Practitioner, Google Gen AI, Deloitte Data Analytics Virtual Lab Simulation (Forage), Azure (ongoing)</span></li>
-            <li><i class="fas fa-users"></i> <strong>Leadership</strong> <span>Women Techmakers, WeCode</span></li>
-        </ul>
-        <a href="honors.html" class="see-all-link">See all achievements</a>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="section fade-in slide-in-right">
-        <h2 class="section-heading"><i class="fas fa-graduation-cap"></i> Education</h2>
-        <div class="card-grid">
-            <div class="edu-card">
-                <h3>B.Tech in Computer Science (AI & ML) | GPA: 9.06/10</h3>
-                <span class="edu-degree">Graphic Era Hill University</span>
-                <span class="edu-date">Aug 2023 – Jun 2027</span>
-                <span class="edu-date">Bhimtal, Uttarakhand</span>
-            </div>
-            <div class="edu-card">
-                <h3>Intermediate: 88%</h3>
-                <span class="edu-degree">Hartmann College</span>
-                <span class="edu-date">Jun 2021 – Mar 2023</span>
-                <span class="edu-date">Bareilly, Uttar Pradesh</span>
-            </div>
-            <div class="edu-card">
-                <h3>Matriculation: 93%</h3>
-                <span class="edu-degree">Hartmann College</span>
-                <span class="edu-date">Jun 2019 – Mar 2021</span>
-                <span class="edu-date">Bareilly, Uttar Pradesh</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section fade-in slide-in-left">
-      <div class="contact-unified-card">
-        <div class="contact-profile-card">
-          <img src="assets/profile.jpg" alt="Pavni Manocha" class="contact-profile-pic">
-          <div class="contact-profile-details">
-            <h2>Let's Connect!</h2>
-            <p class="contact-cta">I'm always open to new opportunities, collaborations, or just a friendly chat. Reach out and let's make something amazing together!</p>
-          </div>
-        </div>
-        <form class="contact-form" id="contactForm" action="https://formsubmit.co/pmanocha553@gmail.com" method="POST" autocomplete="on">
-          <!-- Honeypot field for spam prevention -->
-          <input type="text" name="_honey" style="display:none">
-          <!-- Disable CAPTCHA -->
-          <input type="hidden" name="_captcha" value="false">
-          <!-- Redirect to thank you message -->
-          <input type="hidden" name="_next" value="#thankyou-contact">
-          <div class="floating-label-group">
-            <input type="text" name="name" id="contact-name" class="floating-input" placeholder=" " required>
-            <label for="contact-name">Your Name</label>
-          </div>
-          <div class="floating-label-group">
-            <input type="email" name="email" id="contact-email" class="floating-input" placeholder=" " required>
-            <label for="contact-email">Your Email</label>
-          </div>
-          <div class="floating-label-group">
-            <textarea name="message" id="contact-message" class="floating-input" placeholder=" " rows="4" required></textarea>
-            <label for="contact-message">Your Message</label>
-          </div>
-          <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-        </form>
-        <div class="contact-method contact-email" style="margin-top:1.2rem;">
-          <span class="contact-icon animated-icon"><i class="fas fa-envelope"></i></span>
-          <a href="mailto:pmanocha553@gmail.com">pmanocha553@gmail.com</a>
-        </div>
-        <div class="contact-method contact-socials" style="margin-top:0.5rem;">
-          <span class="contact-icon animated-icon"><i class="fas fa-share-alt"></i></span>
-          <a href="https://linkedin.com/in/pavni-manocha" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/pmanocha07" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://instagram.com/pmanocha_07" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-      <div id="thankyou-contact" class="thankyou-message" style="display:none;">
-        <i class="fas fa-check-circle"></i> Thank you for reaching out! I'll get back to you soon.
-      </div>
-    </section>
-
     <script>
-    // Minimal fade-in on scroll for .fade-in sections
-    document.addEventListener('DOMContentLoaded', function() {
-      const faders = document.querySelectorAll('.fade-in');
-      const appearOptions = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
-      const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        });
-      }, appearOptions);
-      faders.forEach(fader => { appearOnScroll.observe(fader); });
-    });
+        // Interactive Particle Background
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
 
-    // Show thank you message after form submission (client-side fallback)
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      setTimeout(function() {
-        document.querySelector('.contact-form').style.display = 'none';
-        document.getElementById('thankyou-contact').style.display = 'block';
-      }, 500); // Wait for formsubmit to redirect
-    });
+        const particles = [];
+        const particleCount = 50;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 2 + 1;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 255, 65, 0.3)';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function connectParticles() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 150) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(0, 255, 65, ${0.2 * (1 - distance / 150)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            
+            connectParticles();
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Mouse interaction for particles
+        let particleMouseX = 0, particleMouseY = 0;
+        document.addEventListener('mousemove', (e) => {
+            particleMouseX = e.clientX;
+            particleMouseY = e.clientY;
+            
+            particles.forEach((particle, i) => {
+                const dx = particleMouseX - particle.x;
+                const dy = particleMouseY - particle.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 100) {
+                    const force = (100 - distance) / 100;
+                    particle.vx -= (dx / distance) * force * 0.02;
+                    particle.vy -= (dy / distance) * force * 0.02;
+                }
+            });
+        });
+
+        // Year update
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scrolling with offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('.section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        function updateActiveNav() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionHeight = section.clientHeight;
+                if (sectionTop <= 100 && sectionTop + sectionHeight > 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav();
+
+        // Scroll progress indicator
+        const scrollProgress = document.querySelector('.scroll-progress');
+        window.addEventListener('scroll', () => {
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            if (scrollProgress) {
+                scrollProgress.style.width = scrolled + '%';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Typing effect for status
+        const watching = document.querySelector('.watching');
+        if (watching) {
+            const text = watching.textContent;
+            watching.textContent = '';
+            let i = 0;
+            const typeWriter = () => {
+                if (i < text.length) {
+                    watching.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            };
+            setTimeout(typeWriter, 1000);
+        }
+
+        // Custom Cursor
+        const customCursor = document.querySelector('.custom-cursor');
+        const customCursorDot = document.querySelector('.custom-cursor-dot');
+        let cursorMouseX = 0, cursorMouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            cursorMouseX = e.clientX;
+            cursorMouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            cursorX += (cursorMouseX - cursorX) * 0.1;
+            cursorY += (cursorMouseY - cursorY) * 0.1;
+            
+            if (customCursor) {
+                customCursor.style.left = cursorX - 10 + 'px';
+                customCursor.style.top = cursorY - 10 + 'px';
+            }
+            
+            if (customCursorDot) {
+                customCursorDot.style.left = cursorMouseX - 2 + 'px';
+                customCursorDot.style.top = cursorMouseY - 2 + 'px';
+            }
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Cursor hover effects
+        document.querySelectorAll('a, button, input, textarea').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                if (customCursor) {
+                    customCursor.style.transform = 'scale(1.5)';
+                    customCursor.style.borderColor = 'var(--terminal-cyan)';
+                }
+            });
+            el.addEventListener('mouseleave', () => {
+                if (customCursor) {
+                    customCursor.style.transform = 'scale(1)';
+                    customCursor.style.borderColor = 'var(--terminal-green)';
+                }
+            });
+        });
+
+        // Form validation and submission
+        const form = document.getElementById('contactForm');
+        const submitBtn = form.querySelector('.btn-submit');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
+        const formSuccess = form.querySelector('.form-success');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Validate form
+            let isValid = true;
+            form.querySelectorAll('input[required], textarea[required]').forEach(input => {
+                const errorSpan = input.parentElement.querySelector('.form-error');
+                if (!input.value.trim()) {
+                    errorSpan.textContent = 'This field is required';
+                    input.classList.add('error');
+                    isValid = false;
+                } else {
+                    errorSpan.textContent = '';
+                    input.classList.remove('error');
+                }
+            });
+
+            if (!isValid) return;
+
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline-flex';
+            submitBtn.disabled = true;
+
+            // Submit form
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    formSuccess.style.display = 'block';
+                    form.reset();
+                    setTimeout(() => {
+                        formSuccess.style.display = 'none';
+                    }, 5000);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            } finally {
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Real-time validation
+        form.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('blur', () => {
+                const errorSpan = input.parentElement.querySelector('.form-error');
+                if (!input.value.trim() && input.hasAttribute('required')) {
+                    errorSpan.textContent = 'This field is required';
+                    input.classList.add('error');
+                } else {
+                    errorSpan.textContent = '';
+                    input.classList.remove('error');
+                }
+            });
+
+            input.addEventListener('input', () => {
+                if (input.value.trim()) {
+                    input.classList.remove('error');
+                    input.parentElement.querySelector('.form-error').textContent = '';
+                }
+            });
+        });
     </script>
 </body>
 </html>
