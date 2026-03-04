@@ -52,8 +52,8 @@
             <div class="nav-content">
                 <div class="nav-links">
                     <a href="#about" class="nav-link">01 About</a>
-                    <a href="#projects" class="nav-link">02 Projects</a>
-                    <a href="#experience" class="nav-link">03 Experience</a>
+                    <a href="#experience" class="nav-link">02 Experience</a>
+                    <a href="#projects" class="nav-link">03 Projects</a>
                     <a href="#awards" class="nav-link">04 Awards</a>
                     <a href="#contact" class="nav-link">05 Contact</a>
                 </div>
@@ -63,29 +63,24 @@
 
         <main class="terminal-main">
             <section class="hero-section" id="hero">
-                <div class="terminal-status">
-                    <span class="status-dot"></span>
-                    <span>System Online.</span>
-                    <span class="watching">Watching you...</span>
-                </div>
-                <div class="hero-content">
-                    <div class="terminal-prompt">
-                        <span class="prompt-user">pm@portfolio</span>
-                        <span class="prompt-separator">:</span>
-                        <span class="prompt-path">~</span>
-                        <span class="prompt-char">$</span>
+                <div class="hero-flex-container">
+                    <div class="hero-content">
+                        <h1 class="hero-name">Pavni Manocha.</h1>
+                        <h2 class="hero-subtitle" id="hero-subtitle"></h2>
+                        <p class="hero-description">
+                            I engineer the convergence of Artificial Intelligence, Data Analytics, and Web Applications. 
+                            From ML-powered healthcare tools to scalable digital platforms, I build technology that thinks 
+                            and creates meaningful impact.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn-terminal">Check out my work</a>
+                            <a href="https://drive.google.com/file/d/15QCXBCHmbKiJZmL   cff6S69fha6YBxpfB/view?usp=drive_link" target="_blank" class="btn-terminal btn-secondary">Resume</a>
+                        </div>
                     </div>
-                    <h1 class="hero-name">Pavni Manocha.</h1>
-                    <h2 class="hero-subtitle">Architecting Intelligence across AI, Data & Web.</h2>
-                    <div class="divider-line">|</div>
-                    <p class="hero-description">
-                        I engineer the convergence of Artificial Intelligence, Data Analytics, and Web Applications. 
-                        From ML-powered healthcare tools to scalable digital platforms, I build technology that thinks 
-                        and creates meaningful impact.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn-terminal">Check out my work</a>
-                        <a href="assets/Pavni_Manocha_Resume.pdf" target="_blank" class="btn-terminal btn-secondary">Resume</a>
+                    <div class="hero-image-container">
+                        <div class="image-wrapper-rect">
+                            <img src="assets/my_face.jpeg" alt="Pavni Manocha">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -111,18 +106,65 @@
                             <div class="tech-item">Python</div>
                             <div class="tech-item">Java</div>
                             <div class="tech-item">C/C++</div>
-                            <div class="tech-item">HTML/CSS/JavaScript</div>
+                            <div class="tech-item">HTML/CSS/JS</div>
                             <div class="tech-item">TensorFlow</div>
                             <div class="tech-item">Scikit-learn</div>
                             <div class="tech-item">Pandas</div>
                             <div class="tech-item">NumPy</div>
-                            <div class="tech-item">Flask</div>
+                            <div class="tech-item">MySQL</div>
+                            <div class="tech-item">Swift</div>
+                            <div class="tech-item">Computer Vision</div>
                             <div class="tech-item">Git/GitHub</div>
+                            <div class="tech-item">Firebase</div>
                             <div class="tech-item">AWS</div>
-                            <div class="tech-item">Azure</div>
-                            <div class="tech-item">GCP</div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section id="experience" class="section fade-in">
+                <div class="section-header">
+                    <span class="section-number">03.</span>
+                    <h2 class="section-title">Where I've Worked</h2>
+                </div>
+                <div class="experience-list">
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Research Intern — IIT Roorkee</h3>
+                            <div class="experience-meta">
+                                <span class="experience-date">Jun 2025 – Aug 2025</span>
+                                <span class="experience-type">(On-Site)</span>
+                            </div>
+                        </div>
+                        <p class="experience-role">Research Intern — Machine Learning & Systems</p>
+                        <p class="experience-description">
+                            Conducted applied research at the intersection of machine learning, computer vision, and system observability,
+                            focusing on scalable pipelines, dataset development, and performance optimization.
+                        </p>
+                        <ul class="experience-contributions">
+                            <li>Designed a modular system observability framework with YAML-based configuration for tracking 10+ components.</li>
+                            <li>Built automated CSV log ingestion pipelines into Firestore using a reusable and scalable Firebase client.</li>
+                            <li>Curated and labeled large-scale traffic imagery for the Indian Traffic Dataset, contributing to a model achieving 0.91 mAP@50.</li>
+                            <li>Accelerated debugging cycles by 40%+ through multi-layer logging, structured exception handling, and fault tracing.</li>
+                        </ul>
+
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Intern — Aapke Saath Foundation</h3>
+                            <span class="experience-date">Mar 2025 – May 2025</span>
+                        </div>
+                        <p class="experience-role">Web Developer Intern</p>
+                        <p class="experience-description">
+                            Worked on redesigning and optimizing a production-scale NGO website, with a strong focus on performance,
+                            usability, and cross-device experience.
+                        </p>
+                        <ul class="experience-contributions">
+                            <li>Rebuilt major front-end modules from scratch, cutting page load latency and delivering a smoother mobile-first experience.</li>
+                            <li>Designed and iterated on high-conversion user flows in collaboration with product and operations teams, increasing volunteer onboarding by 25%.</li>                        
+                        </ul>
+                    </article>
                 </div>
             </section>
 
@@ -134,11 +176,29 @@
                 <div class="projects-grid">
                     <article class="project-card">
                         <div class="project-header">
+                            <h3 class="project-name">EitherAssistant</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/pmanocha07/Either-Assistant" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            An offline-first AI voice assistant enabling low-latency, privacy-preserving control of operating systems,
+                            applications, and browsers through natural language commands and intelligent automation.
+                        </p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>AI/ML</span>
+                            <span>System Automation</span>
+                        </div>
+                    </article>
+                    
+                    
+                    <article class="project-card">
+                        <div class="project-header">
                             <h3 class="project-name">DiabeSure</h3>
                             <div class="project-links">
-                                <a href="projects.html#diabesure" target="_blank" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
                                 <a href="https://github.com/pmanocha07/DiabeSure" target="_blank" class="project-link">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -160,18 +220,14 @@
                         <div class="project-header">
                             <h3 class="project-name">bondEd</h3>
                             <div class="project-links">
-                                <a href="projects.html#bonded" target="_blank" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
                                 <a href="https://github.com/pmanocha07" target="_blank" class="project-link">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
                         </div>
                         <p class="project-description">
-                            A personalized learning platform for students & parents with community-first UX. bondEd bridges 
-                            the gap between education and engagement through intelligent content delivery.
-                        </p>
+                        Developed a full-stack alumni–student networking platform for technical departments, featuring searchable directories, 
+                        mentorship matching, internship postings, forums, and event scheduling to streamline collaboration and career support.                        </p>
                         <div class="project-tags">
                             <span>React</span>
                             <span>Node</span>
@@ -183,9 +239,6 @@
                         <div class="project-header">
                             <h3 class="project-name">DineSwift</h3>
                             <div class="project-links">
-                                <a href="projects.html#dineswift" target="_blank" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
                                 <a href="https://github.com/pmanocha07" target="_blank" class="project-link">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -206,9 +259,6 @@
                         <div class="project-header">
                             <h3 class="project-name">TuneNest</h3>
                             <div class="project-links">
-                                <a href="projects.html#tunenest" target="_blank" class="project-link">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
                                 <a href="https://github.com/pmanocha07" target="_blank" class="project-link">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -227,47 +277,6 @@
                 </div>
             </section>
 
-            <section id="experience" class="section fade-in">
-                <div class="section-header">
-                    <span class="section-number">03.</span>
-                    <h2 class="section-title">Where I've Worked</h2>
-                </div>
-                <div class="experience-list">
-                    <article class="experience-item">
-                        <div class="experience-header">
-                            <h3 class="experience-title">Research Intern — IIT Roorkee</h3>
-                            <span class="experience-date">Jun 2025 – Aug 2025</span>
-                        </div>
-                        <p class="experience-role">Research Intern</p>
-                        <p class="experience-description">
-                            Investigated efficient ML architectures for remote sensing datasets and co-authored an upcoming 
-                            publication. Worked on cutting-edge research in machine learning applications for satellite imagery.
-                        </p>
-                        <ul class="experience-contributions">
-                            <li>• Developed novel ML models for remote sensing data analysis</li>
-                            <li>• Collaborated with research team on publication-ready findings</li>
-                            <li>• Optimized algorithms for large-scale dataset processing</li>
-                        </ul>
-                    </article>
-
-                    <article class="experience-item">
-                        <div class="experience-header">
-                            <h3 class="experience-title">Intern — Aapke Saath Foundation</h3>
-                            <span class="experience-date">Mar 2025 – May 2025</span>
-                        </div>
-                        <p class="experience-role">Data Analytics Intern</p>
-                        <p class="experience-description">
-                            Digitized mental-health helpline data into dashboards, improving volunteer response time by 30%. 
-                            Created data-driven solutions for social impact.
-                        </p>
-                        <ul class="experience-contributions">
-                            <li>• Engineered data pipelines for helpline analytics</li>
-                            <li>• Designed interactive dashboards using Tableau</li>
-                            <li>• Reduced response time by 30% through data optimization</li>
-                        </ul>
-                    </article>
-                </div>
-            </section>
 
             <section id="awards" class="section fade-in">
                 <div class="section-header">
@@ -282,7 +291,63 @@
                             Top 20% of 1,000+ applicants in global Web3 leadership program, demonstrating excellence in 
                             blockchain technology and decentralized systems.
                         </p>
-                        <a href="#" class="award-link">View Certificate →</a>
+                        <a href="https://drive.google.com/file/d/1brr1L_Odmdd4C2MEIO86DbLCUfNaXz12/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="award-link">View Mail →</a>
+                    </article>
+
+                    <article class="award-card">
+                        <h3 class="award-title">Stanford Code in Place 2025</h3>
+                        <span class="award-year">2025</span>
+                        <p class="award-description">
+                            Stanford Code in Place 2025 Certification.
+                        </p>
+                        <a href="https://drive.google.com/file/d/1kGF_A9YZHZV4P5huUA_ME9UvxGQMKRTP/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="award-link">View Certificate →</a>
+                    </article>
+                    
+                    <article class="award-card">
+                        <h3 class="award-title">Coursera Certifications</h3>
+                        <span class="award-year">2024-2025</span>
+                        <p class="award-description">
+                            Coursera Certifications in Introduction to AI, Introduction to Machine Learning, and Introduction to Deep Learning.
+                        </p>
+                        <a href="https://drive.google.com/file/d/1ud8atcSFhzpoDx_ckuHd-sYOLpZ2IVze/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="award-link">View Certificates →</a>
+                    </article>
+
+                    <article class="award-card">
+                        <h3 class="award-title">Deloitte Certification</h3>
+                        <span class="award-year">2025</span>
+                        <p class="award-description">
+                            Deloitte Data Analytics Job Simulation Certification.
+                        </p>
+                        <a href="https://drive.google.com/file/d/1tTs9loY0StrElOfohqjhFt0tuhexzv1T/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="award-link">View Certificates →</a>
+                    </article>
+
+                    <article class="award-card">
+                        <h3 class="award-title">AWS & Azure Certifications</h3>
+                        <span class="award-year">2024-2025</span>
+                        <p class="award-description">
+                            AWS Cloud Practitioner, Google Gen AI, Azure (ongoing). Continuous learning in cloud technologies 
+                            and AI platforms.
+                        </p>
+                        <a href="https://drive.google.com/file/d/1yy5JsU-_Ddmj7SK2b8orGcdDlStlNRg7/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="award-link">View Certificates →</a>
+                    </article>
+
+                    <article class="award-card">
+                        <h3 class="award-title">Saylor Certification</h3>
+                        <span class="award-year">2025</span>
+                        <p class="award-description">
+                            Saylor.org Certification in Introduction to Computer Science and Programming Using Python.
+                        </p>
+                        <a href="https://drive.google.com/file/d/1oG78oMGyMUaXOQkpkJveBdllUx9Gqg-l/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="award-link">View Certificate →</a>
+                    </article>
+
+                    <article class="award-card">
+                        <h3 class="award-title">Academic Excellence</h3>
+                        <span class="award-year">2023</span>
+                        <p class="award-description">
+                            Maintaining 9.06/10 GPA at Graphic Era Hill University, consistently ranking among top performers 
+                            in Computer Science.
+                        </p>
+                        <a href="https://drive.google.com/file/d/1pzHVW6Od4gRHbEa0JCtm5WAkGZMzbWso/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="award-link">View Details →</a>
                     </article>
 
                     <article class="award-card">
@@ -292,28 +357,8 @@
                             Ranked 7/200 in Trusting Brains Codeathon for accessible design, showcasing innovation in 
                             inclusive technology solutions.
                         </p>
-                        <a href="#" class="award-link">View Certificate →</a>
                     </article>
 
-                    <article class="award-card">
-                        <h3 class="award-title">Certification Streak</h3>
-                        <span class="award-year">2024-2025</span>
-                        <p class="award-description">
-                            AWS Cloud Practitioner, Google Gen AI, Azure (ongoing). Continuous learning in cloud technologies 
-                            and AI platforms.
-                        </p>
-                        <a href="#" class="award-link">View Certificates →</a>
-                    </article>
-
-                    <article class="award-card">
-                        <h3 class="award-title">Academic Excellence</h3>
-                        <span class="award-year">2023-2025</span>
-                        <p class="award-description">
-                            Maintaining 9.06/10 GPA at Graphic Era Hill University, consistently ranking among top performers 
-                            in Computer Science.
-                        </p>
-                        <a href="#" class="award-link">View Details →</a>
-                    </article>
                 </div>
             </section>
 
@@ -347,36 +392,39 @@
                                     <span>Instagram</span>
                                 </a>
                             </div>
+                            <div class="terminal-status">
+                                <span class="status-dot"></span>
+                                <span>System Online.</span>
+                                <span class="watching">Watching you...</span>
+                            </div>
                         </div>
                     </div>
                 <form class="contact-form" id="contactForm" action="https://formsubmit.co/pmanocha553@gmail.com" method="POST">
-                    <input type="text" name="_honey" style="display:none">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="#contact">
                     <div class="form-group">
-                        <label for="contact-name">// NAME</label>
-                        <input type="text" name="name" id="contact-name" required>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
                         <span class="form-error"></span>
                     </div>
                     <div class="form-group">
-                        <label for="contact-email">// EMAIL</label>
-                        <input type="email" name="email" id="contact-email" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
                         <span class="form-error"></span>
                     </div>
                     <div class="form-group">
-                        <label for="contact-message">// MESSAGE</label>
-                        <textarea name="message" id="contact-message" rows="5" required></textarea>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Hello World..."></textarea>
                         <span class="form-error"></span>
                     </div>
-                    <button type="submit" class="btn-terminal btn-submit">
-                        <span class="btn-text">Execute_Send</span>
-                        <i class="fas fa-paper-plane"></i>
+                    <button type="submit" class="btn-submit btn-terminal">
+                        <span class="btn-text">Send Message</span>
                         <span class="btn-loading" style="display: none;">
                             <i class="fas fa-spinner fa-spin"></i> Sending...
                         </span>
+                        <i class="fas fa-paper-plane"></i>
                     </button>
                     <div class="form-success" style="display: none;">
-                        <i class="fas fa-check-circle"></i> Message sent successfully!
+                        <i class="fas fa-check-circle"></i>
+                        <span>Message sent successfully!</span>
                     </div>
                 </form>
                 </div>
@@ -384,160 +432,94 @@
         </main>
 
         <footer class="terminal-footer">
-            <p>© <span id="year"></span> Pavni Manocha. All rights reserved.</p>
+            <p>Designed & Built by Pavni Manocha</p>
         </footer>
     </div>
 
+    <!-- Background Animation Script -->
     <script>
-        // Interactive Particle Background
         const canvas = document.getElementById('particleCanvas');
-        const ctx = canvas.getContext('2d');
-        
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        const particles = [];
-        const particleCount = 50;
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.radius = Math.random() * 2 + 1;
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-            }
-
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(0, 255, 65, 0.3)';
-                ctx.fill();
-            }
-        }
-
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
-        }
-
-        function connectParticles() {
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-
-                    if (distance < 150) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 255, 65, ${0.2 * (1 - distance / 150)})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        if (canvas) {
+          const ctx = canvas.getContext('2d');
+          
+          let width, height;
+          let particles = [];
+          
+          function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            initParticles();
+          }
+          
+          function initParticles() {
+            particles = [];
+            const particleCount = Math.floor(width * height / 15000); // Density control
             
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
+            for (let i = 0; i < particleCount; i++) {
+              particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                size: Math.random() * 2 + 1,
+                alpha: Math.random() * 0.5 + 0.1
+              });
+            }
+          }
+          
+          function draw() {
+            ctx.clearRect(0, 0, width, height);
+            
+            particles.forEach(p => {
+              p.x += p.vx;
+              p.y += p.vy;
+              
+              if (p.x < 0) p.x = width;
+              if (p.x > width) p.x = 0;
+              if (p.y < 0) p.y = height;
+              if (p.y > height) p.y = 0;
+              
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+              ctx.fillStyle = `rgba(0, 255, 136, ${p.alpha})`;
+              ctx.fill();
             });
             
-            connectParticles();
-            requestAnimationFrame(animate);
+            requestAnimationFrame(draw);
+          }
+          
+          window.addEventListener('resize', resize);
+          resize();
+          draw();
         }
-        animate();
 
-        // Mouse interaction for particles
-        let particleMouseX = 0, particleMouseY = 0;
-        document.addEventListener('mousemove', (e) => {
-            particleMouseX = e.clientX;
-            particleMouseY = e.clientY;
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollProgress = window.scrollY / scrollTotal;
+            document.querySelector('.scroll-progress').style.width = `${scrollProgress * 100}%`;
             
-            particles.forEach((particle, i) => {
-                const dx = particleMouseX - particle.x;
-                const dy = particleMouseY - particle.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < 100) {
-                    const force = (100 - distance) / 100;
-                    particle.vx -= (dx / distance) * force * 0.02;
-                    particle.vy -= (dy / distance) * force * 0.02;
-                }
-            });
-        });
-
-        // Year update
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Smooth scrolling with offset
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offset = 80;
-                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Active nav link on scroll
-        const sections = document.querySelectorAll('.section');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        function updateActiveNav() {
+            // Highlight nav links
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const sectionHeight = section.clientHeight;
-                if (sectionTop <= 100 && sectionTop + sectionHeight > 100) {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
                     current = section.getAttribute('id');
                 }
             });
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
+                if (link.getAttribute('href').includes(current)) {
                     link.classList.add('active');
                 }
             });
-        }
-
-        window.addEventListener('scroll', updateActiveNav);
-        updateActiveNav();
-
-        // Scroll progress indicator
-        const scrollProgress = document.querySelector('.scroll-progress');
-        window.addEventListener('scroll', () => {
-            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (window.scrollY / windowHeight) * 100;
-            if (scrollProgress) {
-                scrollProgress.style.width = scrolled + '%';
-            }
         });
 
-        // Intersection Observer for fade-in animations
+        // Intersection Observer for fade-in
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -569,6 +551,48 @@
                 }
             };
             setTimeout(typeWriter, 1000);
+        }
+
+        // Typing effect for Hero Subtitle
+        const heroSubtitle = document.getElementById('hero-subtitle');
+        if (heroSubtitle) {
+            const textToType = 'Architecting Intelligence across AI, Data & Web.';
+            let i = 0;
+            
+            // Clear content and add cursor
+            heroSubtitle.textContent = '';
+            const textSpan = document.createElement('span');
+            heroSubtitle.appendChild(textSpan);
+            
+            const cursorSpan = document.createElement('span');
+            cursorSpan.textContent = '_';
+            cursorSpan.style.color = 'var(--terminal-green)';
+            cursorSpan.style.animation = 'blink 1s step-end infinite';
+            heroSubtitle.appendChild(cursorSpan);
+            
+            // Add keyframes for blinking if not present
+            if (!document.querySelector('#cursor-blink-style')) {
+                const style = document.createElement('style');
+                style.id = 'cursor-blink-style';
+                style.textContent = `
+                    @keyframes blink { 
+                        0%, 100% { opacity: 1; } 
+                        50% { opacity: 0; } 
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            const typeWriterHero = () => {
+                if (i < textToType.length) {
+                    textSpan.textContent += textToType.charAt(i);
+                    i++;
+                    setTimeout(typeWriterHero, 50 + Math.random() * 50);
+                }
+            };
+            
+            // Start typing after initial load
+            setTimeout(typeWriterHero, 500);
         }
 
         // Custom Cursor
@@ -689,6 +713,61 @@
                     input.classList.remove('error');
                     input.parentElement.querySelector('.form-error').textContent = '';
                 }
+            });
+        });
+    </script>
+    
+    <!-- Modal for viewing files -->
+    <div id="fileModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <iframe id="modalFrame" src="" allow="autoplay"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('fileModal');
+        const modalFrame = document.getElementById('modalFrame');
+
+        function openModal(url) {
+            // Check if it's a Google Drive link
+            if (url.includes('drive.google.com')) {
+                // Convert view to preview for embedding
+                url = url.replace(/\/view.*/, '/preview');
+            }
+            
+            modalFrame.src = url;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling background
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            modalFrame.src = '';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close on outside click
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Attach to existing links
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('a[href*="drive.google.com"], a[href$=".pdf"], a[href$=".jpg"], a[href$=".png"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Check if target is _blank, usually we want to intercept these
+                    // But if it's a social link or github, we ignore. 
+                    // My selector above specifically targets drive/pdf/images.
+                    
+                    e.preventDefault();
+                    openModal(link.href);
+                });
             });
         });
     </script>
