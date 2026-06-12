@@ -555,7 +555,10 @@
                             </div>
                         </div>
                     </div>
-                <form class="contact-form" id="contactForm" action="https://formsubmit.co/pmanocha553@gmail.com" method="POST">
+                <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="REDACTED">
+                    <input type="hidden" name="subject" value="New message from portfolio contact form">
+                    <input type="hidden" name="from_name" value="Portfolio Contact Form">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -568,7 +571,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" required placeholder="Hello World..."></textarea>
+                        <textarea id="message" name="message" required placeholder="Hi, let us connect..."></textarea>
                         <span class="form-error"></span>
                     </div>
                     <button type="submit" class="btn-submit btn-terminal">
@@ -581,6 +584,10 @@
                     <div class="form-success" style="display: none;">
                         <i class="fas fa-check-circle"></i>
                         <span>Message sent successfully!</span>
+                    </div>
+                    <div class="form-error-banner" style="display: none;">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Something went wrong. Please try again or email me directly.</span>
                     </div>
                 </form>
                 </div>
@@ -824,10 +831,11 @@
         const btnText = submitBtn.querySelector('.btn-text');
         const btnLoading = submitBtn.querySelector('.btn-loading');
         const formSuccess = form.querySelector('.form-success');
+        const formErrorBanner = form.querySelector('.form-error-banner');
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             // Validate form
             let isValid = true;
             form.querySelectorAll('input[required], textarea[required]').forEach(input => {
@@ -848,24 +856,31 @@
             btnText.style.display = 'none';
             btnLoading.style.display = 'inline-flex';
             submitBtn.disabled = true;
+            formSuccess.style.display = 'none';
+            formErrorBanner.style.display = 'none';
 
             // Submit form
             try {
                 const formData = new FormData(form);
                 const response = await fetch(form.action, {
                     method: 'POST',
+                    headers: { 'Accept': 'application/json' },
                     body: formData
                 });
+                const result = await response.json();
 
-                if (response.ok) {
+                if (response.ok && result.success) {
                     formSuccess.style.display = 'block';
                     form.reset();
                     setTimeout(() => {
                         formSuccess.style.display = 'none';
                     }, 5000);
+                } else {
+                    formErrorBanner.style.display = 'flex';
                 }
             } catch (error) {
                 console.error('Error:', error);
+                formErrorBanner.style.display = 'flex';
             } finally {
                 btnText.style.display = 'inline';
                 btnLoading.style.display = 'none';
