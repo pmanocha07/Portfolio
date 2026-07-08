@@ -559,6 +559,10 @@
                     <input type="hidden" name="access_key" value="">
                     <input type="hidden" name="subject" value="New message from portfolio contact form">
                     <input type="hidden" name="from_name" value="Portfolio Contact Form">
+                    <input type="hidden" name="sender_ip" value="">
+                    <input type="hidden" name="sender_user_agent" value="">
+                    <input type="hidden" name="sender_timestamp" value="">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -829,6 +833,14 @@
 
         // Form validation and submission
         const form = document.getElementById('contactForm');
+
+        // Capture sender info for abuse tracking; fetched at load so it's ready at submit
+        let senderIP = 'unavailable';
+        fetch('https://api.ipify.org?format=json')
+            .then(r => r.json())
+            .then(data => { senderIP = data.ip; })
+            .catch(() => {});
+
         const submitBtn = form.querySelector('.btn-submit');
         const btnText = submitBtn.querySelector('.btn-text');
         const btnLoading = submitBtn.querySelector('.btn-loading');
@@ -864,6 +876,9 @@
             // Submit form
             try {
                 form.querySelector('[name="access_key"]').value = window.W3F_KEY || '';
+                form.querySelector('[name="sender_ip"]').value = senderIP;
+                form.querySelector('[name="sender_user_agent"]').value = navigator.userAgent;
+                form.querySelector('[name="sender_timestamp"]').value = new Date().toISOString();
                 const formData = new FormData(form);
                 const response = await fetch(form.action, {
                     method: 'POST',
