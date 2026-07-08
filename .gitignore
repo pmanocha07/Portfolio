@@ -1,3 +1,6 @@
+# Keys (deploy separately, never commit)
+public/config.js
+
 # Windows junk
 desktop.ini
 *.bak

@@ -556,7 +556,7 @@
                         </div>
                     </div>
                 <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="REDACTED">
+                    <input type="hidden" name="access_key" value="">
                     <input type="hidden" name="subject" value="New message from portfolio contact form">
                     <input type="hidden" name="from_name" value="Portfolio Contact Form">
                     <div class="form-group">
@@ -599,6 +599,8 @@
             <p class="footer-updated">Last updated: March 2026</p>
         </footer>
     </div>
+
+    <script src="config.js"></script>
 
     <!-- Background Animation Script -->
     <script>
@@ -861,6 +863,7 @@
 
             // Submit form
             try {
+                form.querySelector('[name="access_key"]').value = window.W3F_KEY || '';
                 const formData = new FormData(form);
                 const response = await fetch(form.action, {
                     method: 'POST',
