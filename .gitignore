@@ -1,3 +1,9 @@
+# Windows junk
+desktop.ini
+*.bak
+*_backup.*
+Thumbs.db
+
 # Logs
 logs
 *.log
